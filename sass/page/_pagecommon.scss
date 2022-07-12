@@ -1,0 +1,206 @@
+.ap {
+    p {
+        line-height: 1.85em !important;
+        margin: 0 0 25px;
+        padding: 0;
+    }
+}
+.special_report_version {
+    border: 2px solid #ddd;
+    border-radius: 20px;
+    min-height: 100px;
+    padding: 40px 30px 20px;
+    position: relative;
+    margin-bottom: 30px;
+    background-color: #fff;
+    .version_group {
+        display: flex;
+        @include screen('mobile') {
+            display: block
+        }
+        .leftblock {
+            flex: none;
+            flex-basis: 50%;
+            max-width: 50%;
+            padding: 20px 20px 20px 0;
+            @include screen('mobile') {
+                flex-basis: 100%;
+                max-width: 100%;
+                padding: 0;
+            }
+        }
+        .rightblock {
+            flex: none;
+            flex-basis: 50%;
+            max-width: 50%;
+            padding: 20px 0 20px 20px;
+            @include screen('mobile') {
+                flex-basis: 100%;
+                max-width: 100%;
+                padding: 0;
+            }
+        }
+    }
+    .special_title {
+        font-size: 1.5em;
+        margin-bottom: 15px;
+        line-height: 1.45em;
+        color: #d39220;
+    }
+    .data_pic {
+        margin-bottom: 20px;
+    }
+    .content {
+        margin-bottom: 20px;
+        p {
+            margin: 0;
+        }
+    }
+    // 排行榜
+    .read_leaderboard_slider {
+        display: block;
+        flex-basis: 100%;
+        max-width: 100%;
+        .read_leaderboard_list {
+            padding: 0 5px;
+            a {
+                 .ranking{
+                    &:after{
+                       background-color: #fff; 
+                    }
+                 }
+                .read_book {
+
+                    .bookpic {
+                        width: 140px;
+                        height: 230px;
+                        margin: 0 auto 20px;
+                        text-align: center;
+                        transition: .2s;
+                        position: relative;
+                        img {
+                            max-width: 100%;
+                            max-height: 100%;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                            bottom: 0;
+                            margin: auto;
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+}
+// 書籍排行榜
+.book_leaderboard_block {
+    padding: 20px 0;
+    .title {
+        letter-spacing: 0.05em;
+        font-size: 2em;
+        margin-bottom: 40px;
+        font-weight: bolder;
+        span {
+            position: relative;
+            z-index: 1;
+            padding: 0 5px;
+            &:after {
+                content: '';
+                width: 100%;
+                height: 10px;
+                background-color: $lightColor;
+                position: absolute;
+                right: 0;
+                left: 0;
+                bottom: 0;
+                z-index: -1;
+            }
+        }
+    }
+    .explain {
+        line-height: 1.85em;
+    }
+    .leaderboard_slider {
+        .leaderboard_list {
+            margin: 30px 0;
+            padding: 0 20px;
+            @include screen('xs_mobile') {
+                padding: 0;
+            }
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                li {
+                    margin: 0 0 20px;
+                    a {
+                        display: flex;
+                        color: #333;
+                        padding: 20px;
+                        border-radius: 10px;
+                        background-color: #fff;
+                        box-sizing: border-box;
+                        border: 2px solid #eee;
+                        transition: .5s;
+                        height: 120px;
+                        @include screen('xs_mobile') {
+                            height: auto;
+                        }
+                        .num {
+                            flex: none;
+                            flex-basis: 40px;
+                            max-width: 40px;
+                            margin-right: 10px;
+                            color: #888;
+                            font-size: 1.875em;
+                            font-weight: bolder;
+                        }
+                        .content {
+                            flex: auto;
+                            padding: 0;
+                            text-align: left;
+                            .booktitle {
+                                font-size: 1.25em;
+                                margin-bottom: 10px;
+                                color: #333;
+                            }
+                            .data {
+                                font-size: 0.938em;
+                            }
+                        }
+                        &:hover {
+                            box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+                            border: 2px solid $primaryColor;
+                            background-color: $primaryColor;
+                            .num {
+                                color: #fff;
+                            }
+                            .content {
+                                color: #fff;
+                            }
+                            .booktitle {
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        // 箭頭
+        .slick-prev {
+            left: -60px;
+            @include screen('tablet') {
+                left: -30px;
+            }
+        }
+        .slick-next {
+            right: -60px;
+            @include screen('tablet') {
+                right: -30px;
+            }
+        }
+    }
+}
