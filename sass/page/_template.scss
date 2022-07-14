@@ -50,6 +50,7 @@ body {
             position: relative;
             z-index: 1;
             padding: 0 5px;
+
             &:after {
                 content: '';
                 width: 100%;
@@ -128,7 +129,9 @@ body {
     h2.title {
         font-size: 1.75em;
         color: darken($primaryColor, 10);
-        margin: 20px 0 20px;
+        margin: 20px 0 30px;
+        letter-spacing: 0.05em;
+        
     }
 }
 .hidden {

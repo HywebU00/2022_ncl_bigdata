@@ -237,7 +237,7 @@ $(function() {
     });
     // 首頁閱讀排行榜
     $('.read_leaderboard_slider').slick({
-        dots:false,
+        dots: false,
         infinite: false,
         speed: 300,
         slidesToShow: 5,
@@ -247,8 +247,6 @@ $(function() {
                 settings: {
                     slidesToShow: 4,
                     slidesToScroll: 4,
-                    infinite: true,
-                    
                 }
             }, {
                 breakpoint: 992,
@@ -267,6 +265,26 @@ $(function() {
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1
+                }
+            }
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+        ]
+    });
+    // 歷史的今天
+    $('.book_pic_slider').slick({
+        dots: true,
+        arrows: false,
+        infinite: false,
+        speed: 300,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        responsive: [{
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
                 }
             }
             // You can unslick at a given breakpoint now by adding:

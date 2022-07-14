@@ -1,7 +1,6 @@
 .tabSet {
     max-width: 100%;
     margin: 1em auto;
-    overflow: hidden;
     @extend %clearfix;
     @include screen('mobile') {
         width: auto;
@@ -10,43 +9,6 @@
 }
 .tabs {
     position: relative;
-    // 原來h2
-    // &>.tabItem {
-    //     &.active>a {
-    //         background-color: $primaryColor;
-    //         color: #FFF;
-    //     }
-    //     float: left;
-    //     margin: 0;
-    //     padding: 0;
-    //     font-size:1em;
-    //     line-height: 1;
-    //     @include screen('mobile') {
-    //         float: none;
-    //         &>a {
-    //             width: 100% !important;
-    //             border-bottom: 1px solid #888;
-    //         }
-    //         &.active>a {
-    //             border-color: #bbb;
-    //         }
-    //     }
-    //     &>a {
-    //         display: block;
-    //         padding: 16px 0 14px;
-    //         text-align: center;
-    //         background-color: #aaa;
-    //         color: #fff;
-    //         font-weight: bold;
-    //         text-decoration: none;
-    //         @include text-overflow;
-    //         box-sizing: border-box;
-    //         &:hover {
-    //             background: $primaryColor;
-    //         }
-    //     }
-    // }
-    // 改button
     &>.tabItem {
         &.active {
             background-color: $primaryColor;
@@ -58,23 +20,83 @@
         font-size:1em;
         line-height: 1;
         display: block;
-        padding: 16px 0 14px;
+        padding: 23px 0;
         text-align: center;
         background-color: #aaa;
         color: #fff;
         font-weight: bold;
         text-decoration: none;
-        @include text-overflow;
+        position:relative;
         box-sizing: border-box;
         &:hover, &:focus {
             background: $primaryColor;
+            border: 1px solid $primaryColor;
+            box-shadow: none;
         }
         @include screen('mobile') {
             float: none;
-            width: 100% !important;
+            // width: 100% !important;
             border-bottom: 1px solid #888;
             &.active {
                 border-color: #bbb;
+            }
+        }
+    }
+    // 歷史的今天
+    &.history_tab {
+        @include screen('mobile'){
+            text-align: center;
+        }
+        &>.tabItem {
+            background-color: #1a1a1a;
+            border-radius: 50px;
+
+            &:before {
+                content: '';
+                width: 1px;
+                height: 13px;
+                background-color: #fff;
+                position: absolute;
+                top: 0;
+                left: 50%;
+                margin-left: -1px;
+            }
+            &:after {
+                content: '';
+                width: 1px;
+                height: 13px;
+                background-color: #1a1a1a;
+                position: absolute;
+                top: -13px;
+                left: 50%;
+                margin-left: -1px;
+                z-index: 1;
+            }
+            &.active {
+                background-color: $primaryColor;
+                color: #FFF;
+                &:after {
+                    content: '';
+                    width: 1px;
+                    height: 13px;
+                    background-color: $primaryColor;
+                    position: absolute;
+                    top: -13px;
+                    left: 50%;
+                    margin-left: -1px;
+                    z-index: 1;
+                }
+            }
+            @include screen('mobile') {
+                float: none;
+                clear: both;
+                display: inline-block;
+               
+                border-bottom:none;
+                padding: 23px 40px;
+                &.active {
+                    border-color: #bbb;
+                }
             }
         }
     }
@@ -110,9 +132,8 @@
         margin: 0 0 1.3em 0;
         padding: 0;
         line-height: 1.6;
-        border-bottom: 1px #CCC dashed;
         @include screen('mobile') {
-            @include text-overflow();
+           
         }
         a {
             @include aSetting_nocolor;
@@ -122,6 +143,115 @@
             margin: 0 0 0 1em;
             font-size: .813em;
             color: #666;
+        }
+    }
+}
+// 歷史的今天
+.history_tab {
+    .tabContent {
+        height: 450px;
+        @include screen('mobile'){
+            height: auto;
+        }
+        .book_pic_slider {
+            .book_pic_list {
+                text-align: center;
+                margin-bottom: 20px;
+                a {
+                    display: block;
+                    text-align: center;
+                    position: relative;
+                    padding: 0 50px;
+                    img {
+                        width: 260px;
+                        max-height: 370px;
+                        margin: 0 auto 10px;
+                    }
+                    .year {
+                        text-align: center;
+                        font-size: 1.125em;
+                        color: #666;
+                    }
+                }
+            }
+            // 點點
+            .slick-dots {
+                bottom: -17px;
+                li {
+                    position: relative;
+                    margin: 0 15px;
+                    &:before {
+                        content: '';
+                        width: 300%;
+                        height: 1px;
+                        background-color: #ccc;
+                        position: absolute;
+                        right: 50%;
+                        top: 3px;
+                        z-index: -1;
+                    }
+                    &:first-child {
+                        &:before {
+                            display: none;
+                        }
+                    }
+                    button {
+                        width: 7px;
+                        height: 7px;
+                        border: 1px solid #666;
+                        background: #fff;
+                        opacity: 1;
+                        font-size: 0.1em;
+                        color: transparent;
+                        margin: 0 auto;
+                        &:before {
+                            content: attr(title);
+                            font-size: 10em;
+                            background: transparent;
+                            border-radius: 0;
+                            color: #999;
+                            width: auto;
+                            height: 20px;
+                            top: 30px;
+                            left: 0;
+                            opacity: 1;
+                            text-align: center;
+                        }
+                        &:hover {
+                            &:before {
+                                box-shadow: none;
+                            }
+                        }
+                        &:focus {
+                            &:before {
+                                box-shadow: none;
+                            }
+                        }
+                    }
+                    &.slick-active {
+                        button {
+                            opacity: 1;
+                            /* 點 active 的顏色 */
+                            background: #fff;
+                            width: 19px;
+                            height: 19px;
+                            border: 1px solid #4a4545;
+                            margin-top: -6px;
+                            &:hover {
+                                /* 點 active  hover的顏色 */
+                                border: 1px solid #4a4545;
+                                background: #fff;
+                            }
+                            &:focus {
+                                /* 點 active  focus的顏色 */
+                                border: 1px solid #4a4545;
+                                background: #fff;
+                                box-shadow: none;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

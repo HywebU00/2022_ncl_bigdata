@@ -24,20 +24,32 @@
         &>ul, ol {
             list-style-type: none;
             padding: 0;
-            border-top: 2px solid $primaryColor;
+            // border-top: 2px solid $primaryColor;
             &>li {
-                padding: 1em 0;
                 border-bottom: 1px solid #DDD;
                 position: relative; // outline: 1px solid blue;
+                &:before {
+                    content: '';
+                    width: 8px;
+                    height: 8px;
+                    background-color: #333;
+                    border-radius: 50%;
+                    position: absolute;
+                    left: 8px;
+                    top: 22px;
+                }
                 .tag {
                     margin-left: 2em;
                 }
                 &>a {
                     display: block;
-                    padding-left: 2em;
+                    padding: 1em 7em 1em 2em;
                     position: relative;
                     line-height: 1.45em;
                     color: $color-word;
+                    @include screen('xs_mobile'){
+                        padding: 1em 1em 1em 2em;
+                    }
                     &:hover {
                         color: $aHover;
                     }
@@ -47,6 +59,7 @@
                         position: absolute;
                         top: 0;
                         left: 0;
+                        display: none;
                         &:after {
                             content: ".";
                             display: inline-block;
@@ -62,14 +75,21 @@
                 }
                 time {
                     display: block;
-                    color: #AAA;
+                    color: #666;
                     font-size: .938em;
+                    position: absolute;
+                    top: 16px;
+                    right: 8px;
+                    @include screen('xs_mobile'){
+                        position:relative;
+                        top:auto;
+                        right:auto;
+                    }
                 }
             }
         }
     }
 }
-
 // .album {
 //     margin: 1em auto;
 //     ul {
@@ -93,7 +113,6 @@
 //                 flex:0 0 96%;
 //                 margin:0 3% 5%;
 //             }
-            
 //         }
 //     }
 // }

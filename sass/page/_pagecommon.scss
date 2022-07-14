@@ -40,12 +40,38 @@
                 padding: 0;
             }
         }
+        .more {
+            max-width: 100%;
+            margin: 20px  auto 0;
+            text-align: center;
+        }
     }
     .special_title {
-        font-size: 1.5em;
-        margin-bottom: 15px;
-        line-height: 1.45em;
-        color: #d39220;
+        letter-spacing: 0.1em;
+        font-size: 1.75em;
+        font-weight: bolder;
+        margin: 0 0 40px 0;
+        font-family: 'Noto Serif TC', serif;
+        letter-spacing: 0.05em;
+        position: relative;
+        span {
+            position: relative;
+            z-index: 1;
+            padding: 0 5px;
+            line-height: 1.6em;
+            display: inline-block;
+            &:after {
+                content: '';
+                width: 100%;
+                height: 10px;
+                background-color: $lightColor;
+                position: absolute;
+                right: 0;
+                left: 0;
+                bottom: 0;
+                z-index: -1;
+            }
+        }
     }
     .data_pic {
         margin-bottom: 20px;
@@ -64,13 +90,12 @@
         .read_leaderboard_list {
             padding: 0 5px;
             a {
-                 .ranking{
-                    &:after{
-                       background-color: #fff; 
+                .ranking {
+                    &:after {
+                        background-color: #fff;
                     }
-                 }
+                }
                 .read_book {
-
                     .bookpic {
                         width: 140px;
                         height: 230px;
@@ -89,15 +114,38 @@
                             margin: auto;
                         }
                     }
-                    
                 }
+            }
+        }
+        // 箭頭
+        .slick-prev,
+        .slick-next {
+            top: 60%;
+        }
+        .slick-prev {
+            left: -60px;
+            @include screen('tablet') {
+                left: -30px;
+            }
+        }
+        .slick-next {
+            right: -60px;
+            @include screen('tablet') {
+                right: -30px;
             }
         }
     }
 }
 // 書籍排行榜
 .book_leaderboard_block {
-    padding: 20px 0;
+    // padding: 20px 0;
+    border: 2px solid #ddd;
+    border-radius: 20px;
+    min-height: 100px;
+    padding: 40px 30px 20px;
+    position: relative;
+    margin-bottom: 30px;
+    background-color: #fff;
     .title {
         letter-spacing: 0.05em;
         font-size: 2em;
@@ -200,6 +248,208 @@
             right: -60px;
             @include screen('tablet') {
                 right: -30px;
+            }
+        }
+    }
+}
+// 註冊頁
+.formblock {
+    border: 2px solid #ddd;
+    border-radius: 20px;
+    min-height: 100px;
+    padding: 30px 40px 30px;
+    position: relative;
+    margin-bottom: 30px;
+    background-color: #fff;
+}
+// 快速查詢
+.fastsearch {
+    border: 2px solid #ddd;
+    border-radius: 20px;
+    padding: 15px 30px 15px;
+    position: relative;
+    margin-bottom: 30px;
+    background-color: #fff;
+    box-sizing: border-box;
+    .flex-form {
+        &.form_inline {
+            border: none;
+        }
+        .form_grp {
+            flex: auto;
+            flex: calc(100% - 200px);
+            max-width: calc(100% - 200px);
+            margin: 0;
+            label {
+                font-size: 1.125em;
+                flex: none;
+            }
+            input[type="text"] {
+                flex: auto;
+            }
+            @include screen('mobile') {
+                flex: 100%;
+                max-width: 100%;
+            }
+            @media(max-width: 480px) {
+                label {
+                    display: block;
+                    flex: auto;
+                    flex-basis: 100%;
+                    max-width: 100%;
+                    text-align: center;
+                    margin-bottom: 10px;
+                }
+                input[type="text"] {
+                    flex-basis: 100%;
+                    max-width: 100%;
+                }
+            }
+        }
+        .btn_grp {
+            flex: none;
+            flex-basis: 200px;
+            max-width: 200px;
+            margin: 0;
+            @include screen('mobile') {
+                flex-basis: 100%;
+                max-width: 100%;
+            }
+        }
+    }
+}
+// 閱讀排行版
+.leaderboard_content_block {
+    border: 2px solid #ddd;
+    border-radius: 20px;
+    min-height: 100px;
+    padding: 20px 30px 40px;
+    position: relative;
+    margin-bottom: 20px;
+    background-color: #fff;
+    @media(max-width: 530px) {
+        padding: 20px 20px 40px;
+    }
+    .read_leaderboard_content {
+        display: flex;
+        flex-wrap: wrap;
+        .read_leaderboard_list {
+            padding: 0 5px;
+            box-sizing: border-box;
+            flex: none;
+            flex-basis: 19.5%;
+            max-width: 19.5%;
+            margin: 0 0.25% 15px;
+            @media(max-width: 1200px) {
+                flex-basis: 24.5%;
+                max-width: 24.5%;
+            }
+            @include screen('tablet') {
+                flex-basis: 32.5%;
+                max-width: 32.5%;
+            }
+            @include screen('mobile') {
+                flex-basis: 49.5%;
+                max-width: 49.5%;
+            }
+            @media(max-width:530px) {
+                flex-basis: 100%;
+                max-width: 100%;
+            }
+            a {
+                position: relative;
+                display: block;
+                color: #333;
+                height: 430px;
+                padding-top: 45px;
+                .ranking {
+                    color: $primaryColor;
+                    position: relative;
+                    font-size: 1.875em;
+                    font-weight: bolder;
+                    text-align: center;
+                    padding: 0 10px 40px;
+                    transition: .2s;
+                    &:before {
+                        content: '';
+                        // width:100%;
+                        height: 2px;
+                        background-color: #830c33;
+                        position: absolute;
+                        bottom: 25px;
+                        left: 20px;
+                        right: 20px;
+                    }
+                    &:after {
+                        content: '';
+                        border: 2px solid #830c33;
+                        width: 10px;
+                        height: 10px;
+                        background-color: #f7f7f7;
+                        border-top: none;
+                        border-right: none;
+                        transform: rotate(-45deg);
+                        position: absolute;
+                        bottom: 20px;
+                        left: 50%;
+                        margin-left: -5px;
+                    }
+                }
+                .read_book {
+                    background-color: #fff;
+                    border: 1px solid #e0e0e0;
+                    border-radius: 5px;
+                    padding: 20px;
+                    box-sizing: border-box;
+                    text-align: center;
+                    transition: .2s;
+                    height: 330px;
+                    position: absolute;
+                    bottom: 0;
+                    width: 100%;
+                    box-sizing: border-box;
+                    .bookpic {
+                        width: 100%;
+                        height: 230px;
+                        margin: 0 auto 20px;
+                        text-align: center;
+                        transition: .2s;
+                        position: relative;
+                        img {
+                            max-width: 100%;
+                            max-height: 100%;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                            bottom: 0;
+                            margin: auto;
+                        }
+                    }
+                    .bookname {
+                        display: block;
+                        position: absolute;
+                        bottom: 20px;
+                        left: 20px;
+                        right: 20px;
+                        @include text-overflow;
+                        // @include text-line(2,23px);  
+                        text-align: center;
+                    }
+                }
+                &:hover {
+                    color: $aHover;
+                    .ranking {
+                        margin-top: -30px;
+                        font-size: 2.625em;
+                    }
+                    .read_book {
+                        height: 350px;
+                        .bookpic {
+                            transform: scale(1.1);
+                        }
+                    }
+                }
             }
         }
     }

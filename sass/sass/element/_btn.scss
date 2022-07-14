@@ -84,7 +84,7 @@ $btn-radius:.2em;
 }
 .btn-yellow {
     // @extend %btn;
-    @include btn_setting(lighten($color-yellow, 5), #333);
+    @include btn_setting($lightColor, #fff);
 }
 .btn-orange {
     // @extend %btn;
@@ -100,7 +100,7 @@ $btn-radius:.2em;
 }
 .btn-submit {
     // @extend %btn;
-    @include btn_setting(lighten($primaryColor, 5), #FFF);
+    @include btn_setting(darken($primaryColor, 5), #FFF);
 }
 .btn-reset {
     // @extend %btn;

@@ -441,7 +441,7 @@ $(function() {
     });
 
     function tabSet() {
-        $('.tabs').each(function() {
+        $('.history_tab').each(function() {
             var _tab = $(this),
                 _tabItem = _tab.find('.tabItem'),
                 // _tabItemA = _tabItem.children('a'), //改button後，這行沒有
@@ -449,7 +449,7 @@ $(function() {
                 tabwidth = _tab.width(),
                 tabItemHeight = _tabItem.outerHeight(),
                 tabContentHeight = _tab.find('.active').next().innerHeight(),
-                tiGap = 0,
+                tiGap = 10,
                 tabItemLength = _tabItem.length,
                 tabItemWidth;
             _tab.find('.active').next('.tabContent').show();
@@ -462,7 +462,8 @@ $(function() {
                 _tabItem.last().css({ position: 'absolute', top: 0, right: 0 }).width(tabItemWidth);
             } else {
                 _tab.css('height', 'auto');
-                _tabItem.width(tabwidth);
+                // _tabItem.width(tabwidth);
+               _tabItem.css('width', 'auto');
                 _tabItem.css('margin-left', 0).last().css('position', 'relative');
             }
             _tabItem.focus(tabs); //改button後，前面改_tabItem
@@ -476,11 +477,18 @@ $(function() {
                 _tabItemNow.addClass('active');
                 if (ww <= wwSmall) {
                     _tabItem.not('.active').next().slideUp();
-                    _tabItemNow.next().slideDown();
+                    // _tabItemNow.next().slideDown();
+                     _tabItemNow.next().slideDown("0", function() {
+                        $('.book_pic_slider').slick("setPosition", 0);
+                    });
                     $('html,body').stop(true, false).animate({ scrollTop: scollDistance });
                 } else {
-                    _tabItem.not('.active').next().hide();
-                    _tabItemNow.next().show();
+                    // _tabItem.not('.active').next().hide();
+                    // _tabItemNow.next().show();
+                     _tabItem.not('.active').next().fadeOut();
+                    _tabItemNow.next().fadeIn("0", function() {
+                        $('.book_pic_slider').slick("setPosition", 0);
+                    });
                     tabContentHeight = _tabItemNow.next().innerHeight();
                     _tab.height(tabContentHeight + tabItemHeight);
                 }

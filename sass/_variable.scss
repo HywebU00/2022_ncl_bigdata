@@ -24,8 +24,8 @@ $aColor: $linkColor ;
 $aHover: darken($aColor, 10);
 $aFocus:#ff3e4d;
 // 表單focus顏色
-$form-focus: #0066cc; //表單
-$form-btn: #0066cc; //表單
+$form-focus: $lightColor; //表單
+$form-btn: $lightColor; //表單
 //------------------------------------------------------字型--------//
 // 字型設定
 $font-family: Lato,
