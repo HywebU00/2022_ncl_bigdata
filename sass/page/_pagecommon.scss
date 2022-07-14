@@ -19,10 +19,10 @@
             display: block
         }
         .leftblock {
-            flex: none;
+            flex: auto;
             flex-basis: 50%;
-            max-width: 50%;
-            padding: 20px 20px 20px 0;
+            max-width: 100%;
+            padding: 20px 20px ;
             @include screen('mobile') {
                 flex-basis: 100%;
                 max-width: 100%;
@@ -30,10 +30,10 @@
             }
         }
         .rightblock {
-            flex: none;
+             flex: auto;
             flex-basis: 50%;
-            max-width: 50%;
-            padding: 20px 0 20px 20px;
+            max-width: 100%;
+           padding: 20px 20px ;
             @include screen('mobile') {
                 flex-basis: 100%;
                 max-width: 100%;
@@ -453,4 +453,8 @@
             }
         }
     }
+}
+// 專題報導
+.topic_block{
+    
 }
