@@ -125,9 +125,19 @@ a.more {
     height: 488px;
     background-color: #d1d0d1;
     text-align: center;
+    .container{
+        position:relative;
+    }
+    #particles-js{
+        
+    }
     .bigbanner_group {
         width: 50%;
-        margin: 190px auto 0;
+        margin: 0 auto;
+        position:absolute;
+        top:190px;
+        right:0;
+        left:0;
         @media(max-width: 1200px) {
             width: 60%;
         }
@@ -136,7 +146,8 @@ a.more {
         }
         @media(max-width: 767px) {
             width: 80%;
-            margin: 120px auto 0;
+           
+            top:120px;
         }
         .title {
             color: $color-red;
@@ -741,7 +752,21 @@ a.more {
     background-position: center;
     padding: 80px 0;
     position: relative;
+    &:after{
+        content: '';
+        background-image:url('../images/news_information_bg.png');
+        background-repeat:no-repeat;
+        background-position: right top;
+        width:800px;
+        height: 431px;
+        position:absolute;
+        right:0;
+        top:0;
+        z-index: 0;
+    }
     .container {
+        position:relative;
+        z-index: 1;
         @include gutter(120px);
         @include screen('mobile') {
             @include gutter(60px);

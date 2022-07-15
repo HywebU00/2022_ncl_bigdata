@@ -1,0 +1,15 @@
+canvas {
+  display: block;
+  vertical-align: bottom;
+}
+
+#particles-js {
+  position: absolute;
+  width: 30%;
+  height: 30%;
+  top:200px;
+  left:300px;
+  
+}
+
+
