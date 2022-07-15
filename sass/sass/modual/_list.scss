@@ -36,7 +36,7 @@
                     border-radius: 50%;
                     position: absolute;
                     left: 8px;
-                    top: 22px;
+                    top: 26px;
                 }
                 .tag {
                     margin-left: 2em;
@@ -45,7 +45,7 @@
                     display: block;
                     padding: 1em 7em 1em 2em;
                     position: relative;
-                    line-height: 1.45em;
+                    line-height: 1.8em;
                     color: $color-word;
                     @include screen('xs_mobile'){
                         padding: 1em 1em 1em 2em;

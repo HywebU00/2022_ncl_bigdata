@@ -1,6 +1,6 @@
 .ap {
     p {
-        line-height: 1.85em !important;
+        line-height: 1.8em !important;
         margin: 0 0 25px;
         padding: 0;
     }
@@ -22,7 +22,7 @@
             flex: auto;
             flex-basis: 50%;
             max-width: 100%;
-            padding: 20px 20px ;
+            padding: 20px 20px;
             @include screen('mobile') {
                 flex-basis: 100%;
                 max-width: 100%;
@@ -30,10 +30,10 @@
             }
         }
         .rightblock {
-             flex: auto;
+            flex: auto;
             flex-basis: 50%;
             max-width: 100%;
-           padding: 20px 20px ;
+            padding: 20px 20px;
             @include screen('mobile') {
                 flex-basis: 100%;
                 max-width: 100%;
@@ -42,17 +42,17 @@
         }
         .more {
             max-width: 100%;
-            margin: 20px  auto 0;
+            margin: 20px auto 0;
             text-align: center;
         }
     }
     .special_title {
         letter-spacing: 0.1em;
-        font-size: 1.75em;
+        font-size: 1.687em;
         font-weight: bolder;
         margin: 0 0 40px 0;
         font-family: 'Noto Serif TC', serif;
-        letter-spacing: 0.05em;
+        letter-spacing: 0.03em;
         position: relative;
         span {
             position: relative;
@@ -455,6 +455,156 @@
     }
 }
 // 專題報導
-.topic_block{
-    
+.topic_block {
+    .topic_list {
+        a {
+            border: 2px solid #ddd;
+            border-radius: 20px;
+            min-height: 100px;
+            padding: 40px 30px 40px;
+            position: relative;
+            margin-bottom: 30px;
+            background-color: #fff;
+            display: flex;
+            flex-wrap: wrap;
+            color: #000;
+            transition: .5s;
+            .leftblock {
+                flex: auto;
+                flex-basis: calc(100% - 292px);
+                max-width: 100%;
+                .title {
+                    font-size: 1.5em;
+                    margin-bottom: 20px;
+                    font-weight: bolder;
+                    line-height: 1.5em;
+                }
+                .content {
+                    line-height: 1.8em;
+                }
+            }
+            .rightblock {
+                flex: none;
+                flex-basis: 242px;
+                max-width: 242px;
+                .topic_book {
+                    margin-left: 50px;
+                    img {
+                        width: 242px;
+                        border: 1px solid #fff;
+                    }
+                }
+            }
+            &:hover {
+                background-color: #fff0dc;
+                .title {
+                    color: darken($primaryColor, 10);
+                }
+            }
+        }
+    }
+}
+// 登入頁面
+.login_group {
+    background-color: #fff;
+    padding: 40px;
+    width: 60%;
+    margin: 0 auto 90px;
+    border-radius: 5px;
+    @include screen('tablet') {
+        width: 80%;
+    }
+    @include screen('xs_mobile') {
+        width: 90%;
+    }
+    .title {
+        font-size: 2em;
+        color: #333;
+        font-family: 'Noto Serif TC', serif;
+        letter-spacing: 0.05em;
+        margin-bottom: 50px;
+        position: relative;
+        &:before {
+            content: '';
+            width: 30px;
+            height: 4px;
+            background-color: #333;
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            margin-left: -15px;
+        }
+        span {
+            color: $primaryColor;
+        }
+    }
+    .content {
+        width: 60%;
+        margin: 0 auto;
+        @include screen('tablet') {
+            width: 80%;
+        }
+        @include screen('xs_mobile') {
+            width: 100%;
+        }
+        .account_number {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 5px 5px 5px 35px;
+            background-image: url('../images/login_icon01.png');
+            background-repeat: no-repeat;
+            background-position: 10px center;
+            margin-bottom: 10px;
+        }
+        .password_block {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 5px 5px 5px 35px;
+            background-image: url('../images/login_icon02.png');
+            background-repeat: no-repeat;
+            background-position: 10px center;
+            margin-bottom: 10px;
+            .labelEffect .btn-icon {
+                top: -4px;
+            }
+        }
+        input[type="password"], input[type="text"] {
+            padding: 0;
+            border: none;
+        }
+        .verify {
+            margin-bottom: 0;
+            width: 100%;
+            min-width: 100% !important;
+        }
+        .btn_grp {
+            .btn {
+                width: 100%;
+                padding: 1em 1.25em;
+                background-color: #c00009;
+                color: #fff;
+                &:hover, &:focus {
+                    background-color: darken(#c00009, 5);
+                }
+            }
+        }
+        .link {
+            background-image:url('../images/login_link_icon01.png');
+            background-repeat:no-repeat;
+            background-position:0 0;
+            display: inline-block;
+            padding-left:25px;
+            a {
+                color:#333;
+                text-decoration: underline;
+                display: inline-block;
+                margin:0 8px;
+                font-size: 1.125em;
+
+                &:hover {
+                    color: $secondaryColor;
+                }
+            }
+        }
+    }
 }
