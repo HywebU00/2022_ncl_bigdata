@@ -261,6 +261,9 @@
     position: relative;
     margin-bottom: 30px;
     background-color: #fff;
+    @media(max-width: 480px) {
+        padding: 30px 20px 30px;
+    }
 }
 // 快速查詢
 .fastsearch {
@@ -317,6 +320,20 @@
             }
         }
     }
+    // .form_content {
+    //     &.form_inline {
+    //         label {
+    //             display: block !important;
+    //         }
+    //         .check_grp {
+    //             display: block !important;
+    //             width: 100% !important;
+    //             label {
+    //                 display: block !important;
+    //             }
+    //         }
+    //     }
+    // }
 }
 // 閱讀排行版
 .leaderboard_content_block {
@@ -469,10 +486,17 @@
             flex-wrap: wrap;
             color: #000;
             transition: .5s;
+            
             .leftblock {
                 flex: auto;
                 flex-basis: calc(100% - 292px);
                 max-width: 100%;
+                @include screen('mobile'){
+                    flex-basis:100%;
+                     max-width: 100%;
+                     
+                     order: 1;
+                }
                 .title {
                     font-size: 1.5em;
                     margin-bottom: 20px;
@@ -487,10 +511,21 @@
                 flex: none;
                 flex-basis: 242px;
                 max-width: 242px;
+                 @include screen('mobile'){
+                    flex-basis:100%;
+                     max-width: 100%;
+                     text-align: center;
+                     margin-bottom: 20px;
+                     order: 0;
+                }
                 .topic_book {
                     margin-left: 50px;
+                    @include screen('mobile'){
+                        margin-left: 0;
+                    }
                     img {
                         width: 242px;
+                        margin: 0 auto;
                         border: 1px solid #fff;
                     }
                 }
@@ -589,18 +624,17 @@
             }
         }
         .link {
-            background-image:url('../images/login_link_icon01.png');
-            background-repeat:no-repeat;
-            background-position:0 0;
+            background-image: url('../images/login_link_icon01.png');
+            background-repeat: no-repeat;
+            background-position: 0 0;
             display: inline-block;
-            padding-left:25px;
+            padding-left: 25px;
             a {
-                color:#333;
+                color: #333;
                 text-decoration: underline;
                 display: inline-block;
-                margin:0 8px;
-                font-size:1em;
-
+                margin: 0 8px;
+                font-size: 1em;
                 &:hover {
                     color: $secondaryColor;
                 }

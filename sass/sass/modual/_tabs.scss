@@ -2,7 +2,7 @@
     max-width: 100%;
     margin: 1em auto;
     @extend %clearfix;
-    @include screen('mobile') {
+     @media(max-width: 480px){
         width: auto;
         height: auto !important;
     }
@@ -33,8 +33,9 @@
             border: 1px solid $primaryColor;
             box-shadow: none;
         }
-        @include screen('mobile') {
-            float: none;
+        @media(max-width: 480px)
+        {
+            // float: none;
             // width: 100% !important;
             border-bottom: 1px solid #888;
             &.active {
@@ -44,13 +45,14 @@
     }
     // 歷史的今天
     &.history_tab {
-        @include screen('mobile'){
+
+         @media(max-width: 480px){
             text-align: center;
+            
         }
         &>.tabItem {
             background-color: #1a1a1a;
             border-radius: 50px;
-
             &:before {
                 content: '';
                 width: 1px;
@@ -87,13 +89,13 @@
                     z-index: 1;
                 }
             }
-            @include screen('mobile') {
-                float: none;
-                clear: both;
-                display: inline-block;
-               
-                border-bottom:none;
-                padding: 23px 40px;
+             @media(max-width: 480px){
+                // float: none;
+                // clear: both;
+                // display: inline-block;
+                
+                padding: 23px 30px;
+                width: 100%;
                 &.active {
                     border-color: #bbb;
                 }
@@ -122,7 +124,7 @@
     clear: both;
     padding: 30px 20px;
     display: none;
-    @include screen('mobile') {
+    @media(max-width: 480px){
         position: static;
     }
     ul {
@@ -132,9 +134,7 @@
         margin: 0 0 1.3em 0;
         padding: 0;
         line-height: 1.6;
-        @include screen('mobile') {
-           
-        }
+         @media(max-width: 480px) {}
         a {
             @include aSetting_nocolor;
         }
@@ -150,8 +150,9 @@
 .history_tab {
     .tabContent {
         height: 450px;
-        @include screen('mobile'){
+        @media(max-width: 480px) {
             height: auto;
+            padding-bottom: 80px;
         }
         .book_pic_slider {
             .book_pic_list {
