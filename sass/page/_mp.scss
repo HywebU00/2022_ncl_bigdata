@@ -125,19 +125,17 @@ a.more {
     height: 488px;
     background-color: #d1d0d1;
     text-align: center;
-    .container{
-        position:relative;
+    .container {
+        position: relative;
     }
-    #particles-js{
-        
-    }
+    #particles-js {}
     .bigbanner_group {
         width: 50%;
         margin: 0 auto;
-        position:absolute;
-        top:190px;
-        right:0;
-        left:0;
+        position: absolute;
+        top: 190px;
+        right: 0;
+        left: 0;
         @media(max-width: 1200px) {
             width: 60%;
         }
@@ -146,8 +144,7 @@ a.more {
         }
         @media(max-width: 767px) {
             width: 80%;
-           
-            top:120px;
+            top: 120px;
         }
         .title {
             color: $color-red;
@@ -187,6 +184,19 @@ a.more {
     //     left: 0;
     //     top: 0;
     //     z-index: 0;
+    // }
+    // &:before {
+    //     content: '';
+    //     width: 100%;
+    //     height: 80px;
+    //     position: absolute;
+    //     top: -50px;
+    //     right: 0;
+    //     left: 0;
+    //     background: rgb(240, 223, 215);
+    //     background: linear-gradient(0deg, rgba(240, 223, 215, 1) 67%, rgba(240, 223, 215, 0) 100%);
+    //     // background: rgb(255, 255, 255);
+    //     // background: linear-gradient(0deg, rgba(255, 255, 255, 1) 35%, rgba(255, 255, 255, 0) 100%);
     // }
     .container {
         position: relative;
@@ -326,7 +336,6 @@ a.more {
         @include screen('mobile') {
             padding: 0 30px;
         }
-       
     }
     .special_report_group {
         padding: 0 0 0 0;
@@ -752,20 +761,20 @@ a.more {
     background-position: center;
     padding: 80px 0;
     position: relative;
-    &:after{
+    &:after {
         content: '';
-        background-image:url('../images/news_information_bg.png');
-        background-repeat:no-repeat;
+        background-image: url('../images/news_information_bg.png');
+        background-repeat: no-repeat;
         background-position: right top;
-        width:800px;
+        width: 800px;
         height: 431px;
-        position:absolute;
-        right:0;
-        top:0;
+        position: absolute;
+        right: 0;
+        top: 0;
         z-index: 0;
     }
     .container {
-        position:relative;
+        position: relative;
         z-index: 1;
         @include gutter(120px);
         @include screen('mobile') {
