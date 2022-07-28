@@ -122,13 +122,14 @@ a.more {
     background-image: url('../images/bigbanner01.jpg');
     background-repeat: no-repeat;
     background-position: center top;
-    height: 488px;
+    height: 780px;
     background-color: #d1d0d1;
     text-align: center;
+   
     .container {
         position: relative;
     }
-    #particles-js {}
+   
     .bigbanner_group {
         width: 50%;
         margin: 0 auto;
@@ -166,38 +167,41 @@ a.more {
 }
 // 互動報表
 .report_block {
-    background-color: #f0dfd7;
+   background: rgb(240,223,215);
+background: linear-gradient(0deg, rgba(240,223,215,1) 53%, rgba(231,231,231,1) 100%);
     text-align: center;
-    padding: 80px 0 50px;
+    padding:0 0 50px;
     position: relative;
-    background-image: url('../images/report_bg.png');
-    background-repeat: no-repeat;
-    background-position: left top;
-    // &:before {
-    //     content: '';
-    //     background-image: url('../images/report_bg.png');
-    //     background-repeat: no-repeat;
-    //     background-position: left top;
-    //     width: 100%;
-    //     height: 997px;
-    //     position: absolute;
-    //     left: 0;
-    //     top: 0;
-    //     z-index: 0;
-    // }
-    // &:before {
-    //     content: '';
-    //     width: 100%;
-    //     height: 80px;
-    //     position: absolute;
-    //     top: -50px;
-    //     right: 0;
-    //     left: 0;
-    //     background: rgb(240, 223, 215);
-    //     background: linear-gradient(0deg, rgba(240, 223, 215, 1) 67%, rgba(240, 223, 215, 0) 100%);
-    //     // background: rgb(255, 255, 255);
-    //     // background: linear-gradient(0deg, rgba(255, 255, 255, 1) 35%, rgba(255, 255, 255, 0) 100%);
-    // }
+    margin-top: -150px;
+    // background-image: url('../images/report_bg.png');
+    // background-repeat: no-repeat;
+    // background-position: left top;
+    outline: 1px solid red;
+    &:after {
+        content: '';
+        background-image: url('../images/report_bg.png');
+        background-repeat: no-repeat;
+        background-position: left top;
+        width: 100%;
+        height: 997px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 0;
+    }
+    &:before {
+        content: '';
+        width: 100%;
+        height:150px;
+        position: absolute;
+        top: -150px;
+        right: 0;
+        left: 0;
+    background: rgb(231,231,231);
+background: linear-gradient(0deg, rgba(231,231,231,1) 48%, rgba(238,238,238,0) 100%);
+        // background: rgb(255, 255, 255);
+        // background: linear-gradient(0deg, rgba(255, 255, 255, 1) 35%, rgba(255, 255, 255, 0) 100%);
+    }
     .container {
         position: relative;
         z-index: 2;
