@@ -125,11 +125,9 @@ a.more {
     height: 780px;
     background-color: #d1d0d1;
     text-align: center;
-   
     .container {
         position: relative;
     }
-   
     .bigbanner_group {
         width: 50%;
         margin: 0 auto;
@@ -167,10 +165,10 @@ a.more {
 }
 // 互動報表
 .report_block {
-   background: rgb(240,223,215);
-background: linear-gradient(0deg, rgba(240,223,215,1) 53%, rgba(231,231,231,1) 100%);
+    background: rgb(240, 223, 215);
+    background: linear-gradient(0deg, rgba(240, 223, 215, 1) 53%, rgba(231, 231, 231, 1) 100%);
     text-align: center;
-    padding:0 0 50px;
+    padding: 0 0 50px;
     position: relative;
     margin-top: -150px;
     // background-image: url('../images/report_bg.png');
@@ -188,19 +186,23 @@ background: linear-gradient(0deg, rgba(240,223,215,1) 53%, rgba(231,231,231,1) 1
         left: 0;
         top: 0;
         z-index: 0;
+        @media(max-width: 1400px) {
+            left: -20%;
+        }
+         @media(max-width: 1200px) {
+            left: -30%;
+        }
     }
     &:before {
         content: '';
         width: 100%;
-        height:150px;
+        height: 150px;
         position: absolute;
         top: -150px;
         right: 0;
         left: 0;
-    background: rgb(231,231,231);
-background: linear-gradient(0deg, rgba(231,231,231,1) 48%, rgba(238,238,238,0) 100%);
-        // background: rgb(255, 255, 255);
-        // background: linear-gradient(0deg, rgba(255, 255, 255, 1) 35%, rgba(255, 255, 255, 0) 100%);
+        background: rgb(231, 231, 231);
+        background: linear-gradient(0deg, rgba(231, 231, 231, 1) 48%, rgba(238, 238, 238, 0) 100%);
     }
     .container {
         position: relative;
