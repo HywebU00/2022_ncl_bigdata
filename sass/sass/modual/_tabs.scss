@@ -154,6 +154,7 @@
             height: auto;
             padding-bottom: 80px;
         }
+        // 輪播
         .book_pic_slider {
             .book_pic_list {
                 text-align: center;
@@ -251,6 +252,14 @@
                             }
                         }
                     }
+                }
+            }
+        }
+        // 表格
+        .table_list{
+            table{
+                td{
+                    background-color: #fff;
                 }
             }
         }
