@@ -14,13 +14,13 @@
     position: relative;
     z-index: 99;
     clear: both;
-     margin-top: 5px;
+    margin-top: 5px;
     @include screen('tablet') {
         flex: none;
         margin-right: 0;
         margin-top: 60px;
-        flex-basis: calc(100% - 70px - 38%);
-        max-width: calc(100% - 70px - 38%);
+        flex-basis: calc(100% - 50px - 38%);
+        max-width: calc(100% - 50px - 38%);
     }
     @include screen('mobile') {
         display: none;
@@ -73,8 +73,8 @@
                 line-height: 2.5em;
                 white-space: nowrap;
                 color: $color-word;
-                @include screen('tablet') {
-                    padding: 0 0.7em;
+                @media(max-width: 1200px) {
+                    padding: 0 0.5em;
                 }
             }
             &.hasChild {
