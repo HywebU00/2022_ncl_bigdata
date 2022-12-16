@@ -377,6 +377,9 @@
     margin-bottom: 20px;
     background-color: #fff;
     box-sizing: border-box;
+    label{
+        font-size: 0;
+    }
     select {
         width: auto;
     }
