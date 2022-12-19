@@ -486,16 +486,14 @@
             flex-wrap: wrap;
             color: #000;
             transition: .5s;
-            
             .leftblock {
                 flex: auto;
                 flex-basis: calc(100% - 292px);
                 max-width: 100%;
-                @include screen('mobile'){
-                    flex-basis:100%;
-                     max-width: 100%;
-                     
-                     order: 1;
+                @include screen('mobile') {
+                    flex-basis: 100%;
+                    max-width: 100%;
+                    order: 1;
                 }
                 .title {
                     font-size: 1.5em;
@@ -511,16 +509,16 @@
                 flex: none;
                 flex-basis: 242px;
                 max-width: 242px;
-                 @include screen('mobile'){
-                    flex-basis:100%;
-                     max-width: 100%;
-                     text-align: center;
-                     margin-bottom: 20px;
-                     order: 0;
+                @include screen('mobile') {
+                    flex-basis: 100%;
+                    max-width: 100%;
+                    text-align: center;
+                    margin-bottom: 20px;
+                    order: 0;
                 }
                 .topic_book {
                     margin-left: 50px;
-                    @include screen('mobile'){
+                    @include screen('mobile') {
                         margin-left: 0;
                     }
                     img {
@@ -590,6 +588,9 @@
             background-repeat: no-repeat;
             background-position: 10px center;
             margin-bottom: 10px;
+            label {
+                font-size: 0;
+            }
         }
         .password_block {
             border: 1px solid #ddd;
@@ -599,6 +600,9 @@
             background-repeat: no-repeat;
             background-position: 10px center;
             margin-bottom: 10px;
+            label {
+                font-size: 0;
+            }
             .labelEffect .btn-icon {
                 top: -4px;
             }
