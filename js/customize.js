@@ -292,4 +292,12 @@ $(function() {
             // instead of a settings object
         ]
     });
+
+    // 諮詢服務
+ $('.chat_block .chat_btn>a').click(function(){
+    $('.chat_group').show();
+ })
+ $('.chat_block .chat_group .close_btn>a').click(function(){
+    $('.chat_group').hide();
+ })
 });
