@@ -931,6 +931,9 @@ a.more {
         box-sizing: border-box;
         box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
         display: none;
+        @include screen('xs_mobile'){
+            width: 90vw;
+        }
         .close_btn {
             position: absolute;
             right: 0;
