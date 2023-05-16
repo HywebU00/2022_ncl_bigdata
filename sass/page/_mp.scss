@@ -1018,6 +1018,11 @@ a.more {
             }
             input {
                 border-color: #ddd;
+                &.invalid{
+                    background-color:$linkColor;
+                    color:#fff;
+                    border-color: $linkColor;
+                }
             }
             button.enter {
                 font-size: 0;
