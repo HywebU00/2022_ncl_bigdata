@@ -957,6 +957,9 @@ a.more {
             border-bottom: 1px solid #eee;
             overflow-y: scroll;
             padding-right: 1em;
+            @include screen('xs_mobile'){
+                 height: 88%;
+            }
             .chat_frame {
                 display: flex;
                 flex-wrap: wrap;
