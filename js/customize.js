@@ -294,6 +294,7 @@ $(function() {
     });
 
     // 諮詢服務
+$('.chat_block .chat_group').hide();
  $('.chat_block .chat_btn>a').click(function(){
     $('.chat_group').show();
  })

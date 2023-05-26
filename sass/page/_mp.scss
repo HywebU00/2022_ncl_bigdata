@@ -923,14 +923,16 @@ a.more {
         right: 0;
         top: 0;
         width: 500px;
-        height: 70vh;
+        height:65vh;
         background-color: #fff;
         border: 1px solid #eee;
         border-radius: 10px 0 0 10px;
         padding:0;
         box-sizing: border-box;
         box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-        display: none;
+        display: flex;
+        flex-direction: column;
+        // display: none;
         @include screen('xs_mobile'){
             width: 90vw;
         }
@@ -952,25 +954,25 @@ a.more {
             }
         }
         .chat_title{
+             flex:0 0 auto;
             font-size: 1.375em;
             background-color:darken($primaryColor, 10);
             color:#fff;
             padding:.5em 2em .5em 1em;
-            margin-bottom: 1em;
+            margin-bottom: 0;
             border-radius: 10px 0 0 0;
             letter-spacing: 0.05em;
 
         }
         .chat_content {
-            height: 78%;
-            margin-bottom: 1em;
+             flex:1 1 auto;
+            height: 80%;
+            
             border-bottom: 1px solid #eee;
             overflow-y: scroll;
             
-            padding:0px 1.5em 1.5em 1em;
-            // @include screen('xs_mobile'){
-            //      height: 88%;
-            // }
+            padding:1em 1.5em 1.5em 1em;
+            
             .chat_frame {
                 display: flex;
                 flex-wrap: wrap;
@@ -1027,9 +1029,12 @@ a.more {
             }
         }
         .message {
+            flex:0 0 auto;
             display: flex;
             box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-           margin:0 1.5em;
+           margin:.5em 1em;
+
+           
             input, button {
                 border-radius: 0;
                 margin: 0;
