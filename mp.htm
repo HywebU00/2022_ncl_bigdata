@@ -89,16 +89,20 @@
             <section class="bigbanner_block col-12">
                 <div class="container">
                     <div class="col">
-                        <!-- particles 線條-->
-                        <div id="particles-js"></div>
-                        <script src='https://cldup.com/S6Ptkwu_qA.js'></script>
-                        <script src="particles_line/js/index.js"></script>
                         <div class="bigbanner_group">
                             <div class="title">全國圖書館大數據服務平臺</div>
                             <div class="content">「全國圖書館大數據服務平臺」以公共圖書館各項營運統計及讀者閱讀興趣紀錄等數據為核心資料，提供政府、圖書館、出版社、學術研究者及民眾，透過平臺所揭示的資訊獲取全臺閱讀風貌與圖書館營運之成果。</div>
                         </div>
                     </div>
                 </div>
+                <!-- particles.js container -->
+                <div id="particles-js"></div>
+                <!-- stats - count particles -->
+                <div class="count-particles">
+                    <span class="js-count-particles">--</span> particles </div>
+                <!-- particles.js lib (JavaScript CodePen settings): https://github.com/VincentGarreau/particles.js -->
+                <script src="  https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" type="text/javascript"></script>
+                <script src="https://threejs.org/examples/js/libs/stats.min.js" type="text/javascript"></script>
             </section>
             <!-- bigbanner start-->
             <!-- 互動報表 start -->
@@ -484,18 +488,97 @@
                     <div class="chat_title">大數據平臺智慧圖書推薦</div>
                     <div class="chat_content">
                         <div class="chat_frame">
-                            <div class="dialogue_A"><span>Hi, Welcome to jQueryScript.Net. What's your name?</span></div>
-                            <div class="dialogue_B"><span>My name is hyweb.</span></div>
-                            <div class="dialogue_A"><span>Hi, Welcome to jQueryScript.Net. What's your name?</span></div>
-                            <div class="dialogue_B"><span>My name is hyweb.</span></div>
-                            <div class="dialogue_A"><span>Hi, Welcome to jQueryScript.Net. What's your name?</span></div>
-                            <div class="dialogue_B"><span>My name is hyweb.</span></div>
-                            <div class="dialogue_A"><span>Hi, Welcome to jQueryScript.Net. What's your name?</span></div>
-                            <div class="dialogue_B"><span>My name is hyweb.</span></div>
-                            <div class="dialogue_A"><span>Hi, Welcome to jQueryScript.Net. What's your name?</span></div>
-                            <div class="dialogue_B"><span>My name is hyweb.</span></div>
-                            <div class="dialogue_A"><span>Hi, Welcome to jQueryScript.Net. What's your name?</span></div>
-                            <div class="dialogue_B"><span>My name is hyweb.</span></div>
+                            <div class="dialogue_A">
+                                <div class="dialogue_content">Hi, Welcome to jQueryScript.Net. What's your name?</div>
+                            </div>
+                            <div class="dialogue_B">
+                                <div class="dialogue_content">My name is hyweb.</div>
+                            </div>
+                            <div class="dialogue_A">
+                                <div class="dialogue_content">
+                                    <div class="recommendedbooks_slider">
+                                        <!-- 1 -->
+                                        <div class="recommendedbookslist">
+                                            <a href="javascript:;">
+                                                <div class="bookpic"><img src="images/read_book02.jpg" alt="書籍名稱"></div>
+                                                <span class="bookname">蔡康永的情商課</span>
+                                            </a>
+                                        </div>
+                                        <!-- 2 -->
+                                        <div class="recommendedbookslist">
+                                            <a href="javascript:;">
+                                                <div class="bookpic"><img src="images/read_book03.jpg" alt="書籍名稱"></div>
+                                                <span class="bookname">不一樣的中國史</span>
+                                            </a>
+                                        </div>
+                                        <!-- 3 -->
+                                        <div class="recommendedbookslist">
+                                            <a href="javascript:;">
+                                                <div class="bookpic"><img src="images/read_book04.jpg" alt="書籍名稱"></div>
+                                                <span class="bookname">哈利波特</span>
+                                            </a>
+                                        </div>
+                                        <!-- 4 -->
+                                        <div class="recommendedbookslist">
+                                            <a href="javascript:;">
+                                                <div class="bookpic"><img src="images/read_book05.jpg" alt="書籍名稱"></div>
+                                                <span class="bookname">您好，我是接體員</span>
+                                            </a>
+                                        </div>
+                                        <!-- 5 -->
+                                        <div class="recommendedbookslist">
+                                            <a href="javascript:;">
+                                                <div class="bookpic"><img src="images/read_book06.jpg" alt="書籍名稱"></div>
+                                                <span class="bookname">為你的小猴子</span>
+                                            </a>
+                                        </div>
+                                        <!-- 6 -->
+                                        <div class="recommendedbookslist">
+                                            <a href="javascript:;">
+                                                <div class="bookpic"><img src="images/read_book07.jpg" alt="書籍名稱"></div>
+                                                <span class="bookname">偷偷看一下</span>
+                                            </a>
+                                        </div>
+                                        <!-- -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dialogue_B">
+                                <div class="dialogue_content">My name is hyweb.</div>
+                            </div>
+                            <div class="dialogue_A">
+                                <div class="dialogue_content">
+                                    <div class="options_btnblock">
+                                        <ul>
+                                            <li><a href="#">書本選項</a></li>
+                                            <li><a href="#">書本選項</a></li>
+                                            <li><a href="#">書本選項</a></li>
+                                            <li><a href="#">書本選項</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dialogue_B">
+                                <div class="dialogue_content">My name is hyweb.</div>
+                            </div>
+                            <div class="dialogue_A">
+                                <div class="dialogue_content">Hi, Welcome to jQueryScript.Net. What's your name?</div>
+                            </div>
+                            <div class="dialogue_B">
+                                <div class="dialogue_content">My name is hyweb.</div>
+                            </div>
+                            <div class="dialogue_A">
+                                <div class="dialogue_content">Hi, Welcome to jQueryScript.Net. What's your name?Hi, Welcome to jQueryScript.Net. What's your name?Hi, Welcome to jQueryScript.Net. What's your name?</div>
+                            </div>
+                            <div class="dialogue_B">
+                                <div class="dialogue_content">My name is hyweb.</div>
+                            </div>
+                            <div class="dialogue_A">
+                                <div class="dialogue_content">Hi, Welcome to jQueryScript.Net. What's your name?</div>
+                            </div>
+                            <div class="dialogue_B">
+                                <div class="dialogue_content">My name is hyweb.</div>
+                            </div>
                         </div>
                     </div>
                     <div class="message"><input type="text" name="" value="" placeholder=""><button type="button" class="btn btn-red enter">送出</button></div>

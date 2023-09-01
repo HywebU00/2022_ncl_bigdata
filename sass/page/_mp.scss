@@ -923,17 +923,17 @@ a.more {
         right: 0;
         top: 0;
         width: 500px;
-        height:65vh;
+        height: 65vh;
         background-color: #fff;
         border: 1px solid #eee;
         border-radius: 10px 0 0 10px;
-        padding:0;
+        padding: 0;
         box-sizing: border-box;
         box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
         display: flex;
         flex-direction: column;
         // display: none;
-        @include screen('xs_mobile'){
+        @include screen('xs_mobile') {
             width: 90vw;
         }
         .close_btn {
@@ -953,39 +953,31 @@ a.more {
                 height: 40px;
             }
         }
-        .chat_title{
-             flex:0 0 auto;
+        .chat_title {
+            flex: 0 0 auto;
             font-size: 1.375em;
-            background-color:darken($primaryColor, 10);
-            color:#fff;
-            padding:.5em 2em .5em 1em;
+            background-color: darken($primaryColor, 10);
+            color: #fff;
+            padding: .5em 2em .5em 1em;
             margin-bottom: 0;
             border-radius: 10px 0 0 0;
             letter-spacing: 0.05em;
-
         }
         .chat_content {
-             flex:1 1 auto;
+            flex: 1 1 auto;
             height: 80%;
-            
             border-bottom: 1px solid #eee;
             overflow-y: scroll;
-            
-            padding:1em 1.5em 1.5em 1em;
-            
+            padding: 1em 1.5em 1.5em 1em;
             .chat_frame {
-                display: flex;
-                flex-wrap: wrap;
+                // display: flex;
+                // flex-wrap: wrap;
             }
             .dialogue_A, .dialogue_B {
-                flex: 0 0 auto;
-                flex-basis: 100%;
                 margin-bottom: 1em;
                 display: block;
             }
             .dialogue_A {
-                display: flex;
-                justify-content: flex-start;
                 padding-left: 45px;
                 position: relative;
                 &:before {
@@ -999,15 +991,13 @@ a.more {
                     left: 0;
                     bottom: 0;
                 }
-                span {
+                .dialogue_content {
                     padding: 10px 15px;
                     background-color: #ddd;
                     border-radius: 10px 10px 10px 0;
                 }
             }
             .dialogue_B {
-                display: flex;
-                justify-content: flex-end;
                 padding-right: 45px;
                 position: relative;
                 &:after {
@@ -1021,29 +1011,109 @@ a.more {
                     right: 0;
                     bottom: 0;
                 }
-                span {
+                .dialogue_content {
                     padding: 10px 15px;
                     background-color: lighten($linkColor, 30);
                     border-radius: 10px 10px 0 10px;
                 }
             }
+            .recommendedbooks_slider {
+                text-align: left;
+                .recommendedbookslist {
+                    padding: 5px;
+                    a {
+                        display: block;
+                        text-align: center;
+                        background-color: #fff;
+                        padding: .5em;
+                        border-radius: 5px;
+                        color: #000;
+                        .bookpic {
+                            width: 120px;
+                            height: 180px;
+                            margin: 0 auto;
+                            text-align: center;
+                            transition: .2s;
+                            position: relative;
+                            img {
+                                max-width: 100%;
+                                max-height: 100%;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                right: 0;
+                                bottom: 0;
+                                margin: auto;
+                            }
+                        }
+                        .bookname {
+                            @include text-overflow;
+                            // @include text-line(2,23px);  
+                            text-align: center;
+                        }
+                    }
+                }
+                .slick-prev,
+                .slick-next {
+                    width: 40px !important;
+                    height: 40px !important;
+                }
+                .slick-prev {
+                    left: -26px;
+                    background-color: #fff;
+                }
+                .slick-next {
+                    right: -26px;
+                     background-color: #fff;
+                }
+            }
+            .options_btnblock {
+                ul {
+                    margin: 0;
+                    padding: 0;
+                    list-style-type: none;
+                    display: flex;
+                    flex-wrap: wrap;
+                    li {
+                        margin: 0 2px 6px;
+                        flex:0 0 auto;
+
+                        a {
+                            border: 1px solid #CCC;
+                            padding: .4em .6em;
+                            display: block;
+                            color: #333;
+                            background-color: #fff;
+                            box-sizing: border-box;
+                            border-radius: 4px;
+                            text-align: center;
+                            &:hover {
+                                background-color: #999;
+                                color: #fff;
+                            }
+                        }
+                        @media (max-width: 400px) {
+                            flex:1 1 auto;
+                            flex-wrap: 100%;
+                        }
+                    }
+                }
+            }
         }
         .message {
-            flex:0 0 auto;
+            flex: 0 0 auto;
             display: flex;
             box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-           margin:.5em 1em;
-
-           
+            margin: .5em 1em;
             input, button {
                 border-radius: 0;
                 margin: 0;
             }
             input {
                 border-color: #ddd;
-                &.invalid{
-                    background-color:$linkColor;
-                    color:#fff;
+                &.invalid {
+                    background-color: $linkColor;
+                    color: #fff;
                     border-color: $linkColor;
                 }
             }
@@ -1054,7 +1124,6 @@ a.more {
                 background-position: center;
                 background-size: 16px;
                 width: 50px;
-               
             }
         }
     }
