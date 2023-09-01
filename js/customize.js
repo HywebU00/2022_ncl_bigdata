@@ -327,6 +327,7 @@ $(function() {
     $('.chat_block .chat_group').hide();
     $('.chat_block .chat_btn>a').click(function() {
         $('.chat_group').show();
+        $('.recommendedbooks_slider').slick('refresh');
     })
     $('.chat_block .chat_group .close_btn>a').click(function() {
         $('.chat_group').hide();
