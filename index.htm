@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>單位名稱切版檔案</title>
+    <title>國家圖書館 臺灣閱讀風貌資訊網</title>
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
@@ -13,69 +13,122 @@
     <!-- hyUI -->
     <link rel="stylesheet" href="css/hyui.css">
     <style>
-    .demo_wrap {
-        max-width: 1000px;
-        margin: 0em auto 1em;
-        padding: 15px 15px 3em;
-        clear: both;
-        background: #FFF
-    }
-    .demo_wrap h1 {
-        display: block;
-        margin: 0px auto;
-        max-width: 400px;
-        float: left;
-        margin-right: 1em
-    }
-    @media screen and (max-width:545px) {
+        .demo_wrap {
+            max-width: 1000px;
+            margin: 0em auto 1em;
+            padding: 15px 15px 3em;
+            clear: both;
+            background: #FFF
+        }
+
         .demo_wrap h1 {
-            max-width: 100%;
-            float: none;
-            text-align: center
+            display: block;
+            margin: 0px;
+            max-width: 400px;
+            display: flex;
         }
-    }
-    .demo_wrap h1 img {
-        width: 400px
-    }
-    .num {
-        width: 12%
-    }
-    body {
-        counter-reset: num
-    }
-    table {
-        margin-bottom: 1em
-    }
-    table caption {
-        text-align: left;
-        font-weight: bold;
-        font-size: 1.25em;
-        padding: .5em 0;
-        color: #ff5050
-    }
-    tbody tr td:first-child:before {
-        counter-increment: num;
-        display: block;
-        text-align: center;
-        content: counters(num, ".") " "
-    }
-    tbody tr td:nth-child(2) {
-        width: 35%
-    }
-    .btn_grp {
-        text-align: right;
-    }
-    @media screen and (max-width:545px) {
-        .btn_grp {
+
+        .demo_wrap h1 .logo {
+            flex: 0 0 auto;
+            flex-basis: 60px;
+            margin-right: 10px;
+        }
+
+        .demo_wrap h1 .name {
+            flex: 1 1 auto;
+            flex-basis: calc(100% - 70px);
+        }
+
+        .demo_wrap h1 .name .title_en {
+            flex: 1 1 auto;
+            flex-basis: 100%;
+            color: #b32a25;
+            font-size: 0.813rem;
+            margin: 0;
+        }
+
+        .demo_wrap h1 .name .title {
+            flex: 1 1 auto;
+            flex-basis: 100%;
+            margin: -3px 0 0 0;
+        }
+
+        .demo_wrap h1 .name .title span {
+            font-size: 1.313rem;
+            font-family: 'Noto Serif TC', serif;
+            letter-spacing: 0.01em;
+            font-weight: bolder;
+        }
+
+        .demo_wrap h1 .name .title span.redword {
+            color: #b32a25;
+            margin-right: 0.1em;
+        }
+
+        @media screen and (max-width:545px) {
+            .demo_wrap h1 {
+                max-width: 100%;
+                float: none;
+                text-align: center
+            }
+        }
+
+        .demo_wrap h1 img {
+            width: 400px
+        }
+
+        .num {
+            width: 12%
+        }
+
+        body {
+            counter-reset: num
+        }
+
+        table {
+            margin-bottom: 1em
+        }
+
+        table caption {
+            text-align: left;
+            font-weight: bold;
+            font-size: 1.25em;
+            padding: .5em 0;
+            color: #ff5050
+        }
+
+        tbody tr td:first-child:before {
+            counter-increment: num;
+            display: block;
             text-align: center;
+            content: counters(num, ".") " "
         }
-    }
+
+        tbody tr td:nth-child(2) {
+            width: 35%
+        }
+
+        .btn_grp {
+            text-align: right;
+        }
+
+        @media screen and (max-width:545px) {
+            .btn_grp {
+                text-align: center;
+            }
+        }
     </style>
 </head>
 
 <body>
     <div class="demo_wrap">
-        <h1><img src="images/logo.svg" alt=""></h1>
+        <h1>
+            <div class="logo"><img src="images/logo.svg" alt="國家圖書館logo" /></div>
+            <div class="name">
+                <div class="title_en">National Central library</div>
+                <div class="title"><span class="redword">國家圖書館</span> <span>臺灣閱讀風貌資訊網</span></div>
+            </div>
+        </h1>
         <div class="btn_grp">
             <a href="https://github.com/HywebU00/2022_ncl_bigdata" class="btn">切版檔案請按此下載</a>
         </div>
@@ -97,18 +150,18 @@
                         <!-- 連結放到a裡面就好 -->
                         <td><a href="mp.htm"></a></td>
                     </tr>
-                     <tr>
+                    <tr>
                         <td></td>
                         <td>首頁示範圖</td>
                         <!-- 連結放到a裡面就好 -->
                         <td><a href="mp示範圖.htm"></a></td>
                     </tr>
-                     <tr>
+                    <tr>
                         <td></td>
                         <td>登入頁</td>
                         <td><a href="登入頁.htm"></a></td>
                     </tr>
-                     <tr>
+                    <tr>
                         <td></td>
                         <td>忘記密碼申請</td>
                         <td><a href="忘記密碼申請.htm"></a></td>
@@ -128,7 +181,7 @@
                         <td>cp_最新消息內容頁</td>
                         <td><a href="cp_最新消息內容頁.htm"></a></td>
                     </tr>
-                     <tr>
+                    <tr>
                         <td></td>
                         <td>閱讀排行榜內頁</td>
                         <td><a href="閱讀排行榜內頁.htm"></a></td>
@@ -138,19 +191,19 @@
                         <td>cp_排行榜tableau呈現頁面</td>
                         <td><a href="cp_排行榜tableau呈現頁面.htm"></a></td>
                     </tr>
-                     <tr>
+                    <tr>
                         <td></td>
                         <td>前台專題報導列表書本頁</td>
                         <!-- 連結放到a裡面就好 -->
                         <td><a href="前台專題報導列表書本頁.htm"></a></td>
                     </tr>
-                     <tr>
+                    <tr>
                         <td></td>
                         <td>前台專題報導版型</td>
                         <!-- 連結放到a裡面就好 -->
                         <td><a href="前台專題報導版型.htm"></a></td>
                     </tr>
-                     <tr>
+                    <tr>
                         <td></td>
                         <td>前台專題報導版型次頁</td>
                         <!-- 連結放到a裡面就好 -->
@@ -172,12 +225,12 @@
     <script src="js/hyui.js"></script>
     <script src="js/customize.js"></script>
     <script>
-    $(function() {
-        $('tbody').find('a').each(function(index, el) {
-            var Link = $(this).attr('href');
-            $(this).text(Link);
-        });
-    })
+        $(function () {
+            $('tbody').find('a').each(function (index, el) {
+                var Link = $(this).attr('href');
+                $(this).text(Link);
+            });
+        })
     </script>
 </body>
 
