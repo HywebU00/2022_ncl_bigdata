@@ -11163,6 +11163,9 @@ a.more:hover:after, a.more:focus:after, a.more.active:after {
   color: #333;
   font-size: 0.938em;
 }
+.publish_info .publish_data .tabSet {
+  margin: 1em 0 0;
+}
 
 .book_Introduction {
   margin: 0 10px 0 30px;
