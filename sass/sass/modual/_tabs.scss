@@ -1,278 +1,370 @@
 .tabSet {
-    max-width: 100%;
-    margin: 1em auto;
-    @extend %clearfix;
-    @media(max-width: 480px) {
-        width: auto;
-        height: auto !important;
-    }
+  max-width: 100%;
+  margin: 1em auto;
+  @extend %clearfix;
+  @media (max-width: 480px) {
+    width: auto;
+    height: auto !important;
+  }
 }
 .tabs {
+  position: relative;
+  & > .tabItem {
+    &.active {
+      background-color: $primaryColor;
+      color: #fff;
+    }
+    float: left;
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    line-height: 1;
+    display: block;
+    padding: 23px 0;
+    text-align: center;
+    background-color: #aaa;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
     position: relative;
-    &>.tabItem {
-        &.active {
-            background-color: $primaryColor;
-            color: #FFF;
-        }
-        float: left;
-        margin: 0;
-        padding: 0;
-        font-size:1em;
-        line-height: 1;
-        display: block;
-        padding: 23px 0;
-        text-align: center;
-        background-color: #aaa;
+    box-sizing: border-box;
+    &:hover,
+    &:focus {
+      background: $primaryColor;
+      border: 1px solid $primaryColor;
+      box-shadow: none;
+    }
+    @media (max-width: 480px) {
+      // float: none;
+      // width: 100% !important;
+      border-bottom: 1px solid #888;
+      &.active {
+        border-color: #bbb;
+      }
+    }
+  }
+  // 歷史的今天
+  &.history_tab {
+    @media (max-width: 480px) {
+      text-align: center;
+    }
+    & > .tabItem {
+      background-color: #1a1a1a;
+      border-radius: 50px;
+      &:before {
+        content: '';
+        width: 1px;
+        height: 13px;
+        background-color: #fff;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        margin-left: -1px;
+      }
+      &:after {
+        content: '';
+        width: 1px;
+        height: 13px;
+        background-color: #1a1a1a;
+        position: absolute;
+        top: -13px;
+        left: 50%;
+        margin-left: -1px;
+        z-index: 1;
+      }
+      &.active {
+        background-color: $primaryColor;
         color: #fff;
-        font-weight: bold;
-        text-decoration: none;
-        position:relative;
-        box-sizing: border-box;
-        &:hover, &:focus {
-            background: $primaryColor;
-            border: 1px solid $primaryColor;
-            box-shadow: none;
+        &:after {
+          content: '';
+          width: 1px;
+          height: 13px;
+          background-color: $primaryColor;
+          position: absolute;
+          top: -13px;
+          left: 50%;
+          margin-left: -1px;
+          z-index: 1;
         }
-        @media(max-width: 480px) {
-            // float: none;
-            // width: 100% !important;
-            border-bottom: 1px solid #888;
-            &.active {
-                border-color: #bbb;
-            }
+      }
+      @media (max-width: 480px) {
+        // float: none;
+        // clear: both;
+        // display: inline-block;
+        padding: 23px 30px;
+        width: 100%;
+        &.active {
+          border-color: #bbb;
         }
+      }
     }
-    // 歷史的今天
-    &.history_tab {
-        @media(max-width: 480px) {
-            text-align: center;
-        }
-        &>.tabItem {
-            background-color: #1a1a1a;
-            border-radius: 50px;
-            &:before {
-                content: '';
-                width: 1px;
-                height: 13px;
-                background-color: #fff;
-                position: absolute;
-                top: 0;
-                left: 50%;
-                margin-left: -1px;
-            }
-            &:after {
-                content: '';
-                width: 1px;
-                height: 13px;
-                background-color: #1a1a1a;
-                position: absolute;
-                top: -13px;
-                left: 50%;
-                margin-left: -1px;
-                z-index: 1;
-            }
-            &.active {
-                background-color: $primaryColor;
-                color: #FFF;
-                &:after {
-                    content: '';
-                    width: 1px;
-                    height: 13px;
-                    background-color: $primaryColor;
-                    position: absolute;
-                    top: -13px;
-                    left: 50%;
-                    margin-left: -1px;
-                    z-index: 1;
-                }
-            }
-            @media(max-width: 480px) {
-                // float: none;
-                // clear: both;
-                // display: inline-block;
-                padding: 23px 30px;
-                width: 100%;
-                &.active {
-                    border-color: #bbb;
-                }
-            }
-        }
+  }
+  // 書籍摘要
+  &.book_Introduction {
+    & > .tabItem {
+      padding: 15px 0;
+      border-radius: 50px;
     }
+  }
 }
 //多組 可設定差異
 .example-2 {
-    .tabItem:hover {
-        background: $secondaryColor;
-    }
-    .tabItem.active {
-        background: $secondaryColor;
-    }
+  .tabItem:hover {
+    background: $secondaryColor;
+  }
+  .tabItem.active {
+    background: $secondaryColor;
+  }
 }
 // 顯示content
-.active+.tabContent {
-    display: block;
+.active + .tabContent {
+  display: block;
 }
 .tabContent {
-    position: absolute;
-    top: auto;
-    left: 0;
-    right: 0;
-    clear: both;
-    padding: 30px 20px;
-    display: none;
-    @media(max-width: 480px) {
-        position: static;
+  position: absolute;
+  top: auto;
+  left: 0;
+  right: 0;
+  clear: both;
+  padding: 30px 20px;
+  display: none;
+  @media (max-width: 480px) {
+    position: static;
+  }
+  ul {
+    @include li-reset;
+  }
+  li {
+    margin: 0 0 1.3em 0;
+    padding: 0;
+    line-height: 1.6;
+    @media (max-width: 480px) {
     }
-    ul {
-        @include li-reset;
+    a {
+      @include aSetting_nocolor;
     }
-    li {
-        margin: 0 0 1.3em 0;
-        padding: 0;
-        line-height: 1.6;
-        @media(max-width: 480px) {}
-        a {
-            @include aSetting_nocolor;
-        }
-        time {
-            display: inline-block;
-            margin: 0 0 0 1em;
-            font-size: .813em;
-            color: #666;
-        }
+    time {
+      display: inline-block;
+      margin: 0 0 0 1em;
+      font-size: 0.813em;
+      color: #666;
     }
+  }
 }
 // 歷史的今天
 .history_tab {
-    .tabContent {
-        height: 450px;
-        @media(max-width: 480px) {
-            height: auto;
-            padding-bottom: 40px;
-        }
-        // 輪播
-        .book_pic_slider {
-            text-align: center;
-            .book_pic_list {
-                text-align: center;
-                margin-bottom: 20px;
-                text-align: center;
-                padding: 0 50px;
-                a {
-                    display: block;
-                    text-align: center;
-                    position: relative;
-                    padding: 0;
-                }
-                img {
-                    width: 260px;
-                    max-height: 370px;
-                    margin: 0 auto 10px;
-                }
-                .book_title {
-                    text-align: center;
-                    font-size: 1.25em;
-                    color: #666;
-                    margin-bottom: 10px;
-                }
-                .year {
-                    text-align: center;
-                    font-size: 1.125em;
-                    color: #666;
-                }
-            }
-            // 點點
-            .slick-dots {
-                bottom: -17px;
-                li {
-                    position: relative;
-                    margin: 0 15px;
-                    &:before {
-                        content: '';
-                        width: 300%;
-                        height: 1px;
-                        background-color: #ccc;
-                        position: absolute;
-                        right: 50%;
-                        top: 3px;
-                        z-index: -1;
-                    }
-                    &:first-child {
-                        &:before {
-                            display: none;
-                        }
-                    }
-                    button {
-                        width: 7px;
-                        height: 7px;
-                        border: 1px solid #666;
-                        background: #fff;
-                        opacity: 1;
-                        font-size: 0.1em;
-                        color: transparent;
-                        margin: 0 auto;
-                        &:before {
-                            content: attr(title);
-                            font-size: 10em;
-                            background: transparent;
-                            border-radius: 0;
-                            color: #999;
-                            width: auto;
-                            height: 20px;
-                            top: 30px;
-                            left: 0;
-                            opacity: 1;
-                            text-align: center;
-                        }
-                        &:hover {
-                            &:before {
-                                box-shadow: none;
-                            }
-                        }
-                        &:focus {
-                            &:before {
-                                box-shadow: none;
-                            }
-                        }
-                    }
-                    &.slick-active {
-                        button {
-                            opacity: 1;
-                            /* 點 active 的顏色 */
-                            background: #fff;
-                            width: 19px;
-                            height: 19px;
-                            border: 1px solid #4a4545;
-                            margin-top: -6px;
-                            &:hover {
-                                /* 點 active  hover的顏色 */
-                                border: 1px solid #4a4545;
-                                background: #fff;
-                            }
-                            &:focus {
-                                /* 點 active  focus的顏色 */
-                                border: 1px solid #4a4545;
-                                background: #fff;
-                                box-shadow: none;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        // 表格
-        .table_list {
-            height: 410px;
-            overflow-y: scroll;
-            table {
-                border: 2px solid #ddd;
-                @include screen('mobile') {
-                    border: none;
-                }
-                td {
-                    background-color: #fff;
-                }
-            }
-        }
+  .tabContent {
+    height: 450px;
+    @media (max-width: 480px) {
+      height: auto;
+      padding-bottom: 40px;
     }
+    // 輪播
+    .book_pic_slider {
+      text-align: center;
+      .book_pic_list {
+        text-align: center;
+        margin-bottom: 20px;
+        text-align: center;
+        padding: 0 50px;
+        a {
+          display: block;
+          text-align: center;
+          position: relative;
+          padding: 0;
+        }
+        img {
+          width: 260px;
+          max-height: 370px;
+          margin: 0 auto 10px;
+        }
+        .book_title {
+          text-align: center;
+          font-size: 1.25em;
+          color: #666;
+          margin-bottom: 10px;
+        }
+        .year {
+          text-align: center;
+          font-size: 1.125em;
+          color: #666;
+        }
+      }
+      // 點點
+      .slick-dots {
+        bottom: -17px;
+        li {
+          position: relative;
+          margin: 0 15px;
+          &:before {
+            content: '';
+            width: 300%;
+            height: 1px;
+            background-color: #ccc;
+            position: absolute;
+            right: 50%;
+            top: 3px;
+            z-index: -1;
+          }
+          &:first-child {
+            &:before {
+              display: none;
+            }
+          }
+          button {
+            width: 7px;
+            height: 7px;
+            border: 1px solid #666;
+            background: #fff;
+            opacity: 1;
+            font-size: 0.1em;
+            color: transparent;
+            margin: 0 auto;
+            &:before {
+              content: attr(title);
+              font-size: 10em;
+              background: transparent;
+              border-radius: 0;
+              color: #999;
+              width: auto;
+              height: 20px;
+              top: 30px;
+              left: 0;
+              opacity: 1;
+              text-align: center;
+            }
+            &:hover {
+              &:before {
+                box-shadow: none;
+              }
+            }
+            &:focus {
+              &:before {
+                box-shadow: none;
+              }
+            }
+          }
+          &.slick-active {
+            button {
+              opacity: 1;
+              /* 點 active 的顏色 */
+              background: #fff;
+              width: 19px;
+              height: 19px;
+              border: 1px solid #4a4545;
+              margin-top: -6px;
+              &:hover {
+                /* 點 active  hover的顏色 */
+                border: 1px solid #4a4545;
+                background: #fff;
+              }
+              &:focus {
+                /* 點 active  focus的顏色 */
+                border: 1px solid #4a4545;
+                background: #fff;
+                box-shadow: none;
+              }
+            }
+          }
+        }
+      }
+    }
+    // 表格
+    .table_list {
+      height: 410px;
+      overflow-y: scroll;
+      table {
+        border: 2px solid #ddd;
+        @include screen('mobile') {
+          border: none;
+        }
+        td {
+          background-color: #fff;
+        }
+      }
+    }
+  }
+}
+// 書籍摘要
+.book_Introduction {
+  .tabContent {
+    padding: 20px;
+    .source {
+      margin-bottom: 0.5em;
+    }
+    p {
+      margin-bottom: 0.5em;
+      &.close {
+        @include text-line(3, 1.7em);
+      }
+    }
+    .resourcelist {
+      margin: 0 0 1em;
+      padding: 0;
+      list-style-type: none;
+      &.close {
+        li:nth-child(n + 4) {
+          display: none;
+        }
+      }
+      li {
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 0;
+        padding-left: 1em;
+        position: relative;
+        &:before {
+          content: '';
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background-color: #666;
+          position: absolute;
+          left: 0;
+          top: 15px;
+        }
+        a {
+          padding: 6px 0;
+          display: block;
+        }
+      }
+    }
+    .morebtn,
+    .morebtn2 {
+      display: flex;
+      justify-content: flex-end;
+      //   display: none;
+      &.close {
+        a {
+          &:before {
+            top: 11px;
+            transform: rotate(135deg);
+          }
+        }
+      }
+      a {
+        display: block;
+        background-color: #000;
+        color: #fff;
+        padding: 0.1em 0.5em 0.1em 2em;
+        font-size: 1rem;
+        border-radius: 0.2em;
+        position: relative;
+        &:hover {
+          text-decoration: none;
+        }
+        &:before {
+          content: '';
+          border: 2px solid #fff;
+          border-left: none;
+          border-bottom: none;
+          width: 6px;
+          height: 6px;
+          position: absolute;
+          left: 10px;
+          top: 15px;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
 }
