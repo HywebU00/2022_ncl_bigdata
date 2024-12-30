@@ -7485,6 +7485,14 @@ table.table_sprite tr:nth-child(even) {
   padding: 15px 0;
   border-radius: 50px;
 }
+@media (max-width: 600px) {
+  .tabs.book_Introduction > .tabItem {
+    border-bottom: 1px solid #888;
+  }
+  .tabs.book_Introduction > .tabItem.active {
+    border-color: #bbb;
+  }
+}
 
 .example-2 .tabItem:hover {
   background: #ea5632;
@@ -7663,6 +7671,11 @@ table.table_sprite tr:nth-child(even) {
 
 .book_Introduction .tabContent {
   padding: 20px;
+}
+@media (max-width: 600px) {
+  .book_Introduction .tabContent {
+    position: static;
+  }
 }
 .book_Introduction .tabContent .source {
   margin-bottom: 0.5em;
@@ -9458,7 +9471,7 @@ a.more:after {
   content: "";
   width: 12px;
   height: 12px;
-  border: 2px solid #FFF;
+  border: 2px solid #fff;
   transform: rotate(45deg);
   position: absolute;
   right: -10px;
@@ -9536,8 +9549,8 @@ a.more:hover:after, a.more:focus:after, a.more.active:after {
 }
 
 .demosection [class^=col] {
-  border: 2px solid #FFF;
-  background: #DEDEDE;
+  border: 2px solid #fff;
+  background: #dedede;
 }
 
 .bigbanner_block {
@@ -10484,7 +10497,8 @@ a.more:hover:after, a.more:focus:after, a.more.active:after {
   overflow-y: scroll;
   padding: 1em 1.5em 1.5em 1em;
 }
-.chat_block .chat_group .chat_content .dialogue_A, .chat_block .chat_group .chat_content .dialogue_B {
+.chat_block .chat_group .chat_content .dialogue_A,
+.chat_block .chat_group .chat_content .dialogue_B {
   margin-bottom: 1em;
   display: block;
 }
@@ -10579,6 +10593,15 @@ a.more:hover:after, a.more:focus:after, a.more.active:after {
   right: -26px;
   background-color: #fff;
 }
+.chat_block .chat_group .chat_content .recommendedbooks_slider .borrow_books a {
+  display: block;
+  background-color: #ea5632;
+  color: #fff;
+  transition: 0.5s;
+}
+.chat_block .chat_group .chat_content .recommendedbooks_slider .borrow_books a:hover {
+  background-color: #c00009;
+}
 .chat_block .chat_group .chat_content .options_btnblock ul {
   margin: 0;
   padding: 0;
@@ -10591,7 +10614,7 @@ a.more:hover:after, a.more:focus:after, a.more.active:after {
   flex: 0 0 auto;
 }
 .chat_block .chat_group .chat_content .options_btnblock ul li a {
-  border: 1px solid #CCC;
+  border: 1px solid #ccc;
   padding: 0.4em 0.6em;
   display: block;
   color: #333;
@@ -10616,7 +10639,8 @@ a.more:hover:after, a.more:focus:after, a.more.active:after {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   margin: 0.5em 1em;
 }
-.chat_block .chat_group .message input, .chat_block .chat_group .message button {
+.chat_block .chat_group .message input,
+.chat_block .chat_group .message button {
   border-radius: 0;
   margin: 0;
 }
@@ -11073,7 +11097,7 @@ a.more:hover:after, a.more:focus:after, a.more.active:after {
   background-color: #fff;
   box-sizing: border-box;
 }
-@media (max-width: 600px) {
+@media screen and (max-width: 991px) {
   .publish_info {
     flex-wrap: wrap;
   }
@@ -11083,7 +11107,7 @@ a.more:hover:after, a.more:focus:after, a.more.active:after {
   flex-basis: 200px;
   text-align: center;
 }
-@media (max-width: 600px) {
+@media screen and (max-width: 991px) {
   .publish_info .book_cover_block {
     flex-basis: 100%;
   }
@@ -11096,7 +11120,7 @@ a.more:hover:after, a.more:focus:after, a.more.active:after {
   border-radius: 10px;
   background-color: #eee;
 }
-@media (max-width: 600px) {
+@media screen and (max-width: 991px) {
   .publish_info .book_cover_block .book_cover {
     margin-bottom: 20px;
   }

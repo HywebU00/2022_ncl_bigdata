@@ -505,7 +505,7 @@ $(function () {
         tabItemLength = _tabItem.length,
         tabItemWidth;
       _tab.find('.active').next('.tabContent').show();
-      if (ww >= 480) {
+      if (ww >= 600) {
         _tabContent.css('top', tabItemHeight);
         _tab.height(tabContentHeight + tabItemHeight);
         tabItemWidth = (tabwidth - (tabItemLength - 1) * tiGap) / tabItemLength;
@@ -526,7 +526,7 @@ $(function () {
           scollDistance = tvp + tabItemHeight * tabIndex - tab_headerHeight;
         _tabItem.removeClass('active');
         _tabItemNow.addClass('active');
-        if (ww <= 480) {
+        if (ww <= 600) {
           _tabItem.not('.active').next().slideUp();
           // _tabItemNow.next().slideDown();
           _tabItemNow.next().slideDown('0', function () {

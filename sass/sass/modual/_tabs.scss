@@ -104,6 +104,14 @@
     & > .tabItem {
       padding: 15px 0;
       border-radius: 50px;
+      @media (max-width: 600px) {
+        // float: none;
+        // width: 100% !important;
+        border-bottom: 1px solid #888;
+        &.active {
+          border-color: #bbb;
+        }
+      }
     }
   }
 }
@@ -289,6 +297,9 @@
 .book_Introduction {
   .tabContent {
     padding: 20px;
+    @media (max-width: 600px) {
+      position: static;
+    }
     .source {
       margin-bottom: 0.5em;
     }

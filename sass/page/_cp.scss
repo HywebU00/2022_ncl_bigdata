@@ -300,15 +300,18 @@
   border-radius: 20px;
   background-color: #fff;
   box-sizing: border-box;
-  @media (max-width: 600px) {
+  @include screen('tablet') {
     flex-wrap: wrap;
   }
+  // @media (max-width: 600px) {
+  //   flex-wrap: wrap;
+  // }
   .book_cover_block {
     flex: 0 0 auto;
     flex-basis: 200px;
     text-align: center;
 
-    @media (max-width: 600px) {
+    @include screen('tablet') {
       flex-basis: 100%;
     }
     .book_cover {
@@ -318,7 +321,7 @@
       padding: 10px;
       border-radius: 10px;
       background-color: #eee;
-      @media (max-width: 600px) {
+      @include screen('tablet') {
         margin-bottom: 20px;
       }
       img {
