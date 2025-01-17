@@ -214,9 +214,7 @@
       margin-top: 1em;
     }
     @include screen('mobile') {
-      position: absolute;
-      top: -5px;
-      right: 0;
+      display: none;
     }
   }
   .adm_btb {

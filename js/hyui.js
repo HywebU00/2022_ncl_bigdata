@@ -115,6 +115,7 @@ $(function () {
   _menu.clone().prependTo(_mArea);
   _megamenu.clone().prependTo(_mArea);
   _search.clone().prependTo(_body).removeClass('search').addClass('m_search');
+  $('.header_btn').clone().appendTo(_mArea);
   var liHasChild_level1 = $('aside .menu ul').children('li.hasChild'),
     liHasChild_level2 = $('aside .menu ul ul').children('li.hasChild'),
     liHasChild_level3 = $('aside .menu ul ul ul').children('li.hasChild'),

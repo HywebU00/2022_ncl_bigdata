@@ -3340,9 +3340,7 @@ div.tag ul li a:hover, div.tag ul li a:focus {
 }
 @media screen and (max-width: 767px) {
   .header .header_btn {
-    position: absolute;
-    top: -5px;
-    right: 0;
+    display: none;
   }
 }
 .header .adm_btb {
@@ -4086,6 +4084,70 @@ div.tag ul li a:hover, div.tag ul li a:focus {
 .sidebar .m_area .menu ul li ul li li a:after,
 .sidebar .m_area .megamenu ul li ul li li a:after {
   display: none;
+}
+.sidebar .m_area .header_btn {
+  display: flex;
+  position: relative;
+  margin: 20px 20px;
+  animation-name: headerbtn;
+  animation-duration: 2s;
+}
+@keyframes headerbtn {
+  from {
+    margin-left: 0;
+    opacity: 0;
+  }
+  to {
+    margin-left: 20px;
+    opacity: 1;
+  }
+}
+.sidebar .m_area .header_btn .adm_btb {
+  margin-right: 10px;
+}
+.sidebar .m_area .header_btn .adm_btb a {
+  display: block;
+  box-sizing: border-box;
+  background-color: #d39220;
+  color: #fff;
+  font-weight: bolder;
+  border-radius: 50px;
+  text-align: center;
+  padding: 5px 10px;
+  background-image: url("../images/header_manage_icon.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 25px;
+  width: 40px;
+  height: 40px;
+  font-size: 0;
+  padding: 0;
+}
+.sidebar .m_area .header_btn .adm_btb a:hover {
+  background-color: #df9f2d;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.sidebar .m_area .header_btn .login_btb a {
+  display: block;
+  padding: 9px 20px;
+  box-sizing: border-box;
+  background-color: #8a221e;
+  color: #fff;
+  font-weight: bolder;
+  border-radius: 50px;
+  text-align: center;
+  background-image: url("../images/header_login_icon.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 23px;
+  width: 40px;
+  height: 40px;
+  font-size: 0;
+  padding: 0;
+}
+.sidebar .m_area .header_btn .login_btb a:hover {
+  background-color: #601815;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 .sidebar .navigation {
   position: relative;
