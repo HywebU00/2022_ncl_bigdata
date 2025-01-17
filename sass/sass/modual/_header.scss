@@ -41,6 +41,7 @@
     border: none;
     box-shadow: none;
     box-sizing: border-box;
+    z-index: 101;
     @include screen('mobile') {
       display: block !important;
     }
@@ -113,6 +114,8 @@
     margin: 0 0 0 35px;
     padding: 0;
     box-sizing: border-box;
+    position: relative;
+    z-index: 100;
 
     a {
       display: flex;
@@ -161,13 +164,13 @@
             font-size: 1.25rem;
           }
           @include screen('tablet') {
-            font-size: 1rem;
+            // font-size: 1rem;
           }
           @include screen('xs_mobile') {
-            font-size: 0.938rem;
+            font-size: 1.125rem;
           }
           @media (max-width: 400px) {
-            font-size: 0.813rem;
+            font-size: 1rem;
           }
         }
       }
@@ -183,10 +186,10 @@
       width: 42%;
     }
     @include screen('mobile') {
-      padding: 2px 60px;
+      padding: 0px 60px;
       flex: 0 0 auto;
-      flex-basis: 450px;
-      width: 450px;
+      flex-basis: 500px;
+      width: 500px;
       height: 60px;
       margin: 0 auto;
       img {
@@ -200,21 +203,25 @@
       text-align: left;
     }
   }
-  .adm_btb {
-    flex: none;
-    flex-basis: 90px;
-    max-width: 90px;
-    margin-right: 15px;
-    margin-left: 0;
+  .header_btn {
+    flex: 0 0 auto;
+    display: flex;
+    margin-right: 1em;
+
     @include screen('tablet') {
-      position: absolute;
-      right: 10px;
-      top: 20px;
+      justify-content: flex-end;
+      flex: 1 1 auto;
+      margin-top: 1em;
     }
     @include screen('mobile') {
-      top: 10px;
+      position: absolute;
+      top: -5px;
       right: 0;
     }
+  }
+  .adm_btb {
+    flex: 0 0 auto;
+    margin-right: 10px;
     a {
       display: block;
       box-sizing: border-box;
@@ -223,7 +230,7 @@
       font-weight: bolder;
       border-radius: 50px;
       text-align: center;
-      padding: 9px 10px;
+      padding: 9px 20px;
       @include screen('tablet') {
         padding: 5px 10px;
       }
@@ -242,27 +249,16 @@
         box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
       }
     }
+    @include screen('mobile') {
+      margin-right: 5px;
+    }
   }
   .login_btb {
-    flex: none;
-    flex-basis: 100px;
-    max-width: 100px;
-    margin-right: 15px;
-    margin-left: 8px;
-    @include screen('tablet') {
-      position: absolute;
-      right: 0;
-      top: 20px;
-      flex-basis: 120px;
-      max-width: 120px;
-    }
-    @include screen('mobile') {
-      top: 13px;
-      margin-right: 10px;
-    }
+    flex: 0 0 auto;
+
     a {
       display: block;
-      padding: 9px 10px;
+      padding: 9px 20px;
       box-sizing: border-box;
       background-color: $color-red;
       color: #fff;

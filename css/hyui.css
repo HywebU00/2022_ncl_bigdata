@@ -3160,6 +3160,7 @@ div.tag ul li a:hover, div.tag ul li a:focus {
   border: none;
   box-shadow: none;
   box-sizing: border-box;
+  z-index: 101;
 }
 @media screen and (max-width: 767px) {
   .header > .container .searchCtrl, .header > .container .sidebarCtrl {
@@ -3232,6 +3233,8 @@ div.tag ul li a:hover, div.tag ul li a:focus {
   margin: 0 0 0 35px;
   padding: 0;
   box-sizing: border-box;
+  position: relative;
+  z-index: 100;
 }
 .header h1 a {
   display: flex;
@@ -3285,19 +3288,14 @@ div.tag ul li a:hover, div.tag ul li a:focus {
     font-size: 1.25rem;
   }
 }
-@media screen and (max-width: 991px) {
-  .header h1 a .name span {
-    font-size: 1rem;
-  }
-}
 @media screen and (max-width: 575px) {
   .header h1 a .name span {
-    font-size: 0.938rem;
+    font-size: 1.125rem;
   }
 }
 @media (max-width: 400px) {
   .header h1 a .name span {
-    font-size: 0.813rem;
+    font-size: 1rem;
   }
 }
 @media screen and (max-width: 991px) {
@@ -3309,10 +3307,10 @@ div.tag ul li a:hover, div.tag ul li a:focus {
 }
 @media screen and (max-width: 767px) {
   .header h1 {
-    padding: 2px 60px;
+    padding: 0px 60px;
     flex: 0 0 auto;
-    flex-basis: 450px;
-    width: 450px;
+    flex-basis: 500px;
+    width: 500px;
     height: 60px;
     margin: 0 auto;
   }
@@ -3328,25 +3326,28 @@ div.tag ul li a:hover, div.tag ul li a:focus {
     text-align: left;
   }
 }
-.header .adm_btb {
-  flex: none;
-  flex-basis: 90px;
-  max-width: 90px;
-  margin-right: 15px;
-  margin-left: 0;
+.header .header_btn {
+  flex: 0 0 auto;
+  display: flex;
+  margin-right: 1em;
 }
 @media screen and (max-width: 991px) {
-  .header .adm_btb {
-    position: absolute;
-    right: 10px;
-    top: 20px;
+  .header .header_btn {
+    justify-content: flex-end;
+    flex: 1 1 auto;
+    margin-top: 1em;
   }
 }
 @media screen and (max-width: 767px) {
-  .header .adm_btb {
-    top: 10px;
+  .header .header_btn {
+    position: absolute;
+    top: -5px;
     right: 0;
   }
+}
+.header .adm_btb {
+  flex: 0 0 auto;
+  margin-right: 10px;
 }
 .header .adm_btb a {
   display: block;
@@ -3356,7 +3357,7 @@ div.tag ul li a:hover, div.tag ul li a:focus {
   font-weight: bolder;
   border-radius: 50px;
   text-align: center;
-  padding: 9px 10px;
+  padding: 9px 20px;
 }
 @media screen and (max-width: 991px) {
   .header .adm_btb a {
@@ -3379,31 +3380,17 @@ div.tag ul li a:hover, div.tag ul li a:focus {
   background-color: #df9f2d;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
-.header .login_btb {
-  flex: none;
-  flex-basis: 100px;
-  max-width: 100px;
-  margin-right: 15px;
-  margin-left: 8px;
-}
-@media screen and (max-width: 991px) {
-  .header .login_btb {
-    position: absolute;
-    right: 0;
-    top: 20px;
-    flex-basis: 120px;
-    max-width: 120px;
-  }
-}
 @media screen and (max-width: 767px) {
-  .header .login_btb {
-    top: 13px;
-    margin-right: 10px;
+  .header .adm_btb {
+    margin-right: 5px;
   }
+}
+.header .login_btb {
+  flex: 0 0 auto;
 }
 .header .login_btb a {
   display: block;
-  padding: 9px 10px;
+  padding: 9px 20px;
   box-sizing: border-box;
   background-color: #b42c27;
   color: #fff;
@@ -3677,16 +3664,17 @@ div.tag ul li a:hover, div.tag ul li a:focus {
   position: relative;
   z-index: 99;
   clear: both;
-  margin-top: 5px;
+  margin-top: 0;
   margin-right: 5px;
 }
 @media screen and (max-width: 991px) {
   .menu {
-    flex: 0 0 auto;
+    flex: 1 1 auto;
     margin-right: 0;
-    margin-top: 60px;
-    flex-basis: calc(100% - 50px - 42%);
-    max-width: calc(100% - 50px - 42%);
+    margin-top: -55px;
+    flex-basis: calc(100% - 1em);
+    max-width: calc(100% - 1em);
+    order: 3;
   }
 }
 @media screen and (max-width: 767px) {
@@ -9327,7 +9315,8 @@ body.noscroll {
 .main h2 {
   line-height: 1.25em;
 }
-.main h2.title, .main h3.title {
+.main h2.title,
+.main h3.title {
   letter-spacing: 0.1em;
   font-size: 2em;
   font-weight: bolder;
@@ -9335,12 +9324,14 @@ body.noscroll {
   font-family: "Noto Serif TC", serif;
   letter-spacing: 0.1em;
 }
-.main h2.title span, .main h3.title span {
+.main h2.title span,
+.main h3.title span {
   position: relative;
   z-index: 1;
   padding: 0 5px;
 }
-.main h2.title span:after, .main h3.title span:after {
+.main h2.title span:after,
+.main h3.title span:after {
   content: "";
   width: 100%;
   height: 10px;
@@ -9719,8 +9710,9 @@ a.more:hover:after, a.more:focus:after, a.more.active:after {
 }
 .report_block .report_group .report_content .pic_block {
   text-align: center;
-  background-color: #f6f6f6;
-  margin-right: 100px;
+  background-color: none;
+  margin-right: 60px;
+  margin-bottom: 1em;
 }
 @media screen and (max-width: 991px) {
   .report_block .report_group .report_content .pic_block {
@@ -9730,6 +9722,10 @@ a.more:hover:after, a.more:focus:after, a.more.active:after {
 }
 .report_block .report_group .report_content .pic_block iframe {
   border: none;
+}
+.report_block .report_group .report_content .explanation {
+  text-align: center;
+  font-size: 1.125em;
 }
 .report_block .report_group .more {
   flex: auto;

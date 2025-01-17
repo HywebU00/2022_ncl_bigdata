@@ -268,8 +268,9 @@ a.more {
       }
       .pic_block {
         text-align: center;
-        background-color: #f6f6f6;
-        margin-right: 100px;
+        background-color: none;
+        margin-right: 60px;
+        margin-bottom: 1em;
         @include screen('tablet') {
           margin: 0 auto;
           width: 80%;
@@ -279,6 +280,11 @@ a.more {
         iframe {
           border: none;
         }
+      }
+      .explanation {
+        text-align: center;
+
+        font-size: 1.125em;
       }
     }
     .more {

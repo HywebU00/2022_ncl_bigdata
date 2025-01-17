@@ -14,14 +14,16 @@
   position: relative;
   z-index: 99;
   clear: both;
-  margin-top: 5px;
+  margin-top: 0;
   margin-right: 5px;
+
   @include screen('tablet') {
-    flex: 0 0 auto;
+    flex: 1 1 auto;
     margin-right: 0;
-    margin-top: 60px;
-    flex-basis: calc(100% - 50px - 42%);
-    max-width: calc(100% - 50px - 42%);
+    margin-top: -55px;
+    flex-basis: calc(100% - 1em);
+    max-width: calc(100% - 1em);
+    order: 3;
   }
   @include screen('mobile') {
     display: none;
